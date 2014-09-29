@@ -1,4 +1,4 @@
-watson-services-integration-samples
+Watson Developer Cloud
 ===================================
 
 COMING SOON...
