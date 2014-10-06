@@ -1,0 +1,47 @@
+  <converter timing-name="Add Watson SIRE analysis" type-in="application/vxml-unnormalized" type-out="application/vxml-unnormalized">
+    <parser type="xsl"><![CDATA[<xsl:template match="/">
+  <xsl:apply-templates />
+</xsl:template>
+
+<xsl:template match="@*|node()">
+  <xsl:copy>
+    <xsl:apply-templates select="@*|node()" />
+  </xsl:copy>
+</xsl:template>
+
+<xsl:template match="content[@name='snippet']">
+  <!-- When we have a snippet, we want to copy it too.
+       But we also want to insert some addition contents that contain
+       info from SIRE -->
+  <xsl:variable name="url" select="'http://wce-re.mybluemix.net/api/extract'" />
+  <xsl:variable name="xml">
+    <parse url="{$url}" method="POST">
+      <parse-param name="sid">
+        <attribute name="value"><![CDATA[ie-en-news]]]><![CDATA[]></attribute>
+      </parse-param>
+      <parse-param name="text">
+        <attribute name="value">
+          <xsl:value-of select="." />
+        </attribute>
+      </parse-param>
+    </parse>
+    <fetch finish="finish" />
+  </xsl:variable>
+
+  <xsl:variable name="entities" select="viv:process-xml($xml)//entity" />
+  <xsl:for-each select="$entities//mentref">
+    <xsl:variable name="type" select="../@type" />
+    <xsl:variable name="value" select="." />
+
+    <content name="{$type}" type="text" action="none" indexed-fast-index="set">
+      <xsl:value-of select="$value" />
+    </content>
+
+  </xsl:for-each>
+
+  <xsl:copy>
+    <xsl:apply-templates select="@*|node()" />
+  </xsl:copy>
+</xsl:template>
+]]></parser>
+  </converter>

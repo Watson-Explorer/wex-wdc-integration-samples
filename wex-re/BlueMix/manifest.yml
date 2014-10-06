@@ -1,0 +1,10 @@
+applications:
+- services:
+  - wex-re
+  disk_quota: 1024M
+  host: wex-re
+  name: wex-re
+  path: wex-re.war
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
