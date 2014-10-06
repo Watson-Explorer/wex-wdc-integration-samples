@@ -1,0 +1,68 @@
+<%
+  # Application Builder Widget
+  # Integration with Watson Machine Translation service
+  # Reference http://this is a pointer to the location to get information on this.
+  # Purpose: this widget demonstrates integration with a Watson Machine Translation REST web service.
+  # It reads in the user's query on the search page, sends it to the federated source, then sends the results to the Machine Translation REST service.
+  # The output from the REST service is JSON. This JSON response is parsed and displayed to the user.
+
+
+
+# grab the subject.query and send it to our federated BBC News source
+query = entity_types('Spanish-News').where(subject.query)
+
+# set the REST service url, change this to your implementation
+watson_url = URI.parse('http://wex-mt.mybluemix.net/resources/translate')
+
+elementsTitle = []
+elementsSnippet = []
+
+query.each do |t|   
+     
+      elementsTitle.push(t['title'].first)
+      elementsSnippet.push(t['snippet'].first)
+
+end
+
+
+# POST to the REST service with the question parameter
+params = { 'text' =>   elementsTitle.join("#&#"), 'sid' => 'mt-eses-enus' }
+respTitle = Net::HTTP.post_form(watson_url, params)
+
+params = { 'text' =>   elementsSnippet.join("#&#"), 'sid' => 'mt-eses-enus' }
+respSnippet = Net::HTTP.post_form(watson_url, params)
+
+# parse the JSON response, returns a hash
+parsed_json_title = JSON.parse(respTitle.body)
+if !parsed_json_title.first["error"].nil? && !parsed_json_title.first["error"].empty?
+ %>
+ <p style="color:#FF0000">Error occurred processing your request: <%= parsed_json_title.first["error"] %></p>
+ <%
+end
+
+# parse the JSON response, returns a hash
+parsed_json_snippet = JSON.parse(respSnippet.body)
+if !parsed_json_snippet.first["error"].nil? && !parsed_json_snippet.first["error"].empty?
+ %>
+ <p style="color:#FF0000">Error occurred processing your request: <%= parsed_json_snippet.first["error"] %></p>
+ <%
+end
+
+i = 0
+%>
+<ul>
+<% query.each do |t| %>
+<li>
+    
+  <p><%= link_to parsed_json_title.at(i)['result'], t.url %></p>
+  <p><%= parsed_json_snippet.at(i)['result'] %></p>
+
+  <%i = i + 1%>
+  
+    
+</li>
+ <p>             </p>
+<% end %>
+
+
+</ul>
