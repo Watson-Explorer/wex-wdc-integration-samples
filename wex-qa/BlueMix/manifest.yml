@@ -1,0 +1,10 @@
+applications:
+- services:
+  - wex-qaapi
+  disk_quota: 1024M
+  host: wex-qa
+  name: wex-qa
+  path: wex-qa.war
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
