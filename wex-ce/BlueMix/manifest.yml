@@ -1,0 +1,10 @@
+applications:
+- services:
+  - Concept Expansion-sc
+  disk_quota: 1024M
+  host: wex-ce
+  name: wex-concept-expansion
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 128M
