@@ -1,0 +1,56 @@
+<%
+  # Application Builder Widget
+  # Integration with Watson Message Resonance service
+  # Reference http://this is a pointer to the location to get information on this
+  # Purpose: this widget demonstrates integration with a Message Resonance REST web service
+  # It reads in the user's query on the search page and sends it to the Message Resonance REST service
+  # the output from the REST service is JSON. This JSON response is parsed and displayed to the user.
+
+
+
+
+# net/http library is required to make the POST call to REST service.
+require 'net/http'
+
+# grab the query text from the page object
+message = @subject.query
+
+# set the REST service url, change this to your implementation
+watson_url = URI.parse('http://wex-mr.mybluemix.net/resources/resonate')
+
+# set the question parameter for the REST service to the query we got earlier
+params = { 'message' => message }
+
+# POST to the REST service with the question parameter
+resp = Net::HTTP.post_form(watson_url, params)
+
+
+# parse the JSON response, returns a hash
+parsed_json = JSON.parse(resp.body)
+if !parsed_json["error"].nil? && !parsed_json["error"].empty?
+ %>
+ <p style="color:#FF0000">Problem happened processing your request: <%= parsed_json["error"] %></p>
+ <%
+end
+
+# Display the response. This example re-displays each term of the query in a color representing impact. Hover text reveals a more precise number representing impact.
+if !parsed_json["results"].nil? && !parsed_json["results"].empty?
+  %>
+      <div style="width:100%;display: inline-block; word-wrap: normal;">
+       <% parsed_json["results"].each do |t| %>
+        <span style="color: <%= t["color"]%>;"
+              class="ring"
+              title="Word: [<%=t["word"]%>] Score: [<%=t["score"]%>]"
+              >
+         <%= t["word"] %>
+         </span>
+       <% end %>
+      </div>
+      <div style="font-size:80%;">Word resonance color code (higher valued words have more impact): 
+        <span style="background-color:black; color:white">0-10</span>
+        <span style="background-color:cornflowerblue; color:orange">11-20</span>
+        <span style="background-color:lawngreen; color:red">21-30</span>
+        <span style="background-color:goldenrod; color:blue">31-40</span>
+	    <span style="background-color:crimson; color:black">41+</span>
+      </div>
+<% end %>
