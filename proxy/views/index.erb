@@ -1,0 +1,120 @@
+<html>
+  <head>
+    <title>Application Builder Proxy Tester</title>
+  </head>
+
+  <style> 
+    .error
+    {
+      background-color: pink;
+    }
+
+   </style>
+
+
+  <body>
+    <h1>App Builder Proxy Tester</h1>
+
+    <label for="api">API Function</label><br />
+    <select class="api">
+      <option value="qa">Watson QA</option>
+      <option value="um">Watson User Modeling</option>
+      <option value="um_twitter">Watson User Modeling for Twitter</option>
+      <option value="um_viz_text">Watson User Modeling Visualization</option>
+      <option value="um_viz_twitter">Watson User Modeling Visualiation for Twitter</option>
+      <option value="en_to_sp">Watson Machine Translation (English to Spanish)</option>
+      <option value="sp_to_en">Watson Machine Translation (Spanish to English)</option>
+      <option value="resonate">Watson Message Resonance</option>
+      <option value="re">Watson Relationship Extraction</option>
+      <!-- <option value="pass">Generic Pass Through</option> -->
+    </select>
+
+    <br /><br />
+    <label for="request">Data to be sent through proxy...</label><br />
+    <textarea name="request" rows=10 cols=50 >{"question":"How do I install lotus notes?"}</textarea> <br />
+    <input type="submit" value="Publish" class="post-action" />
+
+
+    <h2>Request</h2>
+    <a class="proxy_url"></a>
+
+    <h2>Result</h2>
+    <div class="result"></div>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script>
+
+      function postIt() {
+        var post_data = $("textarea[name='request']").removeClass("error").val();
+
+        if (post_data == null || post_data.length == 0) {
+          $("textarea[name='request']").addClass("error");
+          return;
+        }
+
+        var api = $('.api').val();
+        var endpoints = {
+          "qa" : "qa/ask/",
+          "um" : "um/model_text/",
+          "um_twitter" : "um/model_twitter/",
+          "um_viz_text" : "um/visualize_text/",
+          "um_viz_twitter" : "um/visualize_twitter/",
+          "en_to_sp" : "english/to/spanish/",
+          "sp_to_en" : "spanish/to/english/",
+          "resonate" : "resonate/message/",
+          "re" : "re/",
+          "pass" : "forward/"
+        }
+
+        var full_url = window.location.origin + "/proxy/" + endpoints[api];
+        $(".proxy_url").attr("href", full_url).empty().append(full_url);
+
+        $(".result").empty();
+        
+        $.ajax({
+          type: "POST",
+          // dataType: "application/json",
+          // contentType: "text/html",
+          url: endpoints[api],
+          data: post_data,
+          success: function(response) {
+            console.log(response);
+            $(".result").empty().text(response);
+          },
+          failure: function(error) {
+            console.log(error);
+            $(".result").empty().text(error);
+          }
+        });
+      }
+
+      function changeExample() {
+         var examples = {
+          "qa" : { "question" : "How do I install lotus notes?" },
+          "um" : { "text" : "The text from which the user model should be created" },
+          "um_twitter" : { "handle" : "IBMWatson" },
+          "um_viz_text" : { "text" : "The text from which the user model should be created" },
+          "um_viz_twitter" : { "handle" : "IBMWatson" },
+          "en_to_sp" : { "text" : "the text to be translated" },
+          "sp_to_en" : { "text" : "el texto para ser traducido" },
+          "resonate" : { "text" : "the message text to be analyzed" },
+          "re" : { "text" : "Eric works for IBM.  He was in Jamaica two weeks ago." }
+        }
+
+        var api = $('.api').val();
+
+        $("textarea[name='request']").empty().append(JSON.stringify(examples[api]));
+      }
+
+
+      $(function() {
+         $(".post-action").click(postIt);
+         $("select.api").change(changeExample)
+      });
+
+
+    </script>
+  </body>
+</html>
+
