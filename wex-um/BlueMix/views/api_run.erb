@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>User Model Test Runner</title>
+  </head>
+
+  <style> 
+    .error
+    {
+      background-color: pink;
+    }
+
+   </style>
+
+
+  <body>
+    <h1>User Modeling Tester</h1>
+
+    <form action="/" method="GET">
+      <label for="api">API Function</label><br />
+      <select class="api" name="api_function">
+        <option value="text" <%= "selected" if @function == "text" %> >Create Model based on text.</option>
+        <option value="twitter" <%= "selected" if @function == "twitter" %> >Create Model based on tweets for @handle</option>
+        <option value="visualize_text" <%= "selected" if @function == "visualize_text" %> >Visualize a use model based on text.</option>
+        <option value="visualize_twitter" <%= "selected" if @function == "visualize_twitter" %> >Visualize a use model based on tweets for @handle.</option>
+      </select>
+
+      <br /><br />
+      <label for="request">Data:</label><br />
+      <textarea name="data" rows=10 cols=50 ><%= @data %></textarea>
+      <br />
+      <input type="submit" value="Publish" />
+    </form>
+
+
+    <% if !@error.nil? %>
+      <h2>Error Conditions</h2>
+      <div> <%= @error %></div>
+    <% end %>    
+
+    <h2>Endpoint</h2>
+    <div class="result">
+      <%= @endpoint unless @endpoint.nil? %>
+    </div>
+
+    <% if defined? @body %>
+      <h2>Body in Posted Request</h2>
+      <div class="result"><%= @body %></div>
+    <% end %>
+
+    <h2>Result</h2>
+    <div class="result" style="width: 800px; height: 800px;">
+      <%= @result unless @result.nil? %>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+    <script>
+      function changeExample() {
+         var examples = {
+          "text" : "This is some text that will be analyzed.",
+          "twitter" : "IBMWatson",
+          "visualize_text" : "This is some text that will be analyzed.",
+          "visualize_twitter" : "IBMWatson"
+        }
+
+        var api = $('.api').val();
+
+        $("textarea[name='data']").empty().append(examples[api]);
+      }
+
+
+      $(function() {
+         $("select.api").change(changeExample)
+      });
+
+
+    </script>
+  </body>
+</html>

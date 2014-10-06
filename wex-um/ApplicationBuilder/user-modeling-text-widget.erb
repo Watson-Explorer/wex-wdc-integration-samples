@@ -1,0 +1,98 @@
+<%
+require 'net/http'
+
+
+
+# Determine the endpoint for the proxy
+# This assumes that the proxy is deployed 
+# to the same server as the current App Builder.
+
+origin = URI.parse(request.original_url)
+endpoint_builder = {
+  :host => origin.host,
+  :port => origin.port,
+  :scheme => origin.scheme,
+  :path => '/proxy/um/model_text/'  
+}
+
+url = URI::HTTP.build(endpoint_builder)
+
+
+data = {
+  :text => @subject['title'].join(" ")
+}.to_json
+
+
+
+req = Net::HTTP::Post.new(url.to_s)
+req.body = data
+req.content_type = 'content/json'
+
+
+response = Net::HTTP.start(url.hostname, url.port) do |http|
+  http.request(req)
+end
+
+model = JSON.parse(response.body)
+
+
+%>
+
+<script>var model = <%= response.body.html_safe %>;</script>
+
+
+
+
+<div><%= model["word_count_message"] %></div>
+<br />
+
+<% model["tree"]["children"].each do |major_category| %>
+
+  <center><h2><%= major_category["name"] %></h2></center>
+  <table class="um">
+    <tr>
+      <th>Value</th>
+      <th>Watson Score</th>
+    </tr>
+    <% major_category["children"].each do |sub_category| %>    
+       <% sub_category["children"].each do |sub_sub_category| %>
+          <% if sub_sub_category["percentage"] > 0.8 %>
+          <tr class="interesting">
+          <% else %>
+          <tr>
+          <% end %>
+            <td><%= sub_sub_category["name"] %></td>
+            <td><%= sub_sub_category["percentage"] %></td>
+          </tr>
+       <% end %>  
+  <% end %>
+
+  </table>
+  <br />
+<% end %>
+  
+
+
+<style>
+
+table.um
+{
+  border: 1px solid black;
+  width: 100%;
+  margin: 5px;
+}
+
+table.um tr, table.um td, table.um th
+{
+  border: 1px solid black;
+  text-align: cetner;
+  padding: 3px;
+}
+
+.interesting
+{
+  background-color: rgba(145,185,121,0.5);
+}
+
+
+</style>

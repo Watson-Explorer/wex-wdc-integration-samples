@@ -1,0 +1,10 @@
+applications:
+- services:
+  - wex-um-service
+  disk_quota: 1024M
+  host: wex-um
+  name: wex-um
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 128M

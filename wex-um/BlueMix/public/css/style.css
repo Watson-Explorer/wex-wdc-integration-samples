@@ -1,0 +1,44 @@
+/* style.css
+ * This file provides css styles.
+ */
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+h1, h2, h3 {
+	text-align: center;
+}
+
+table {
+	table-layout: fixed;
+	width: 800px;
+	margin: 0 auto;
+	word-wrap: break-word;
+	font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}
+
+th {
+	border-bottom: 1px solid #000;
+}
+
+th, td {
+	text-align: left;
+	padding: 2px 20px;
+}
+
+.env-var {
+	text-align: right;
+	border-right: 1px solid #000;
+	width: 30%;
+}
+
+pre {
+	padding: 0;
+	margin: 0;
+}
+
+tr:hover td {
+	background-color: #DDF2F9;
+}
+
