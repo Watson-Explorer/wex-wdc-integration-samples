@@ -139,7 +139,7 @@ Once you have logged into the Application Builder Administration tool, follow th
 
 At this point the widget should be fully configured.  To test the widget, navigate to the Application Builder Home page.  Your widget should be visible.  Try asking Watson `How do I install notes 9 on Windows?`.  The top answers with evidence will be returned in the same widget without reloading the page.
 
-![Screen shot of "Ask Watson" ajax enabled widget.](wex-qa/ApplicationBuilder/ask-watson-ajax-widget.png)
+![Screen shot of "Ask Watson" ajax enabled widget.](ApplicationBuilder/ask-watson-ajax-widget.png)
 
 __*The "Ask Watson" ajax enabled widget*__
 
