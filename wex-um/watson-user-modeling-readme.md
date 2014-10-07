@@ -13,7 +13,7 @@ Please see the [Introduction](/README.md) for an overview of the integration arc
 
 - An [IBM Bluemix](https://ace.ng.bluemix.net/) account
 - [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
-- [Application Builder proxy](proxy/) - Installed and configured
+- [Application Builder proxy](/proxy/) - Installed and configured
 - A basic search application configured in Application Builder. For the purposes of this example, the [example-metadata based tutorial application](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) is sufficient.
 - (Optional) [Prerequisites for creating a Bluemix Ruby based application](/README.md). This prerequisite is required if you would like to develop Ruby applications on your local machine.
 - (Optional) A Twitter account with API access.  This will be used to fetch status updates given a user's Twitter handle in one of the example widgets.
@@ -70,7 +70,7 @@ The Twitter enabled widget requires a valid [Twitter API](https://dev.twitter.co
 3. Create a new App.
 4. Fill out the form and agree to Twitter's Terms of Service.  A Callback URL is not required for this application.
 5. The next page will show a summary of your Twitter API application.  Click on the "API Keys" tab.
-6. The `API key` and `API secret` are what you'll need to connect your Watson Bluemix application to Twitter.  Change lines 17 and 18 of [application_controller.rb](wex-um/BlueMix/controllers/application_controller.rb) to reflect your `API key` and `API secret`. It is not necessary to generate a Twitter access token for the integration. 
+6. The `API key` and `API secret` are what you'll need to connect your Watson Bluemix application to Twitter.  Change lines 17 and 18 of [application_controller.rb](BlueMix/controllers/application_controller.rb) to reflect your `API key` and `API secret`. It is not necessary to generate a Twitter access token for the integration. 
 
 
 ```ruby
@@ -90,9 +90,9 @@ This example requires that example metadata is crawled and configured for use in
 
 ### Configuring the Watson Explorer Application Builder
 
-This example includes two widgets.  Both custom widgets require the use of the [Application Builder Proxy](proxy/).
+This example includes two widgets.  Both custom widgets require the use of the [Application Builder Proxy](/proxy/).
 
-To use the proxy you must [update the Application Builder Proxy configuration](proxy/config.ru) to point to your deployed Bluemix application.
+To use the proxy you must [update the Application Builder Proxy configuration](/proxy/config.ru) to point to your deployed Bluemix application.
 
 
 ```ruby
@@ -122,7 +122,7 @@ At this point the widget should be fully configured.  To test the widget, naviga
 
 This simple example illustrates a basic integration. You should choose text that is relevant to a user or entity that you are modeling and you must provide enough text to generate a reliable model.  See the [User Modeling documentation]() for more guidance on text selection and recommendations.
 
-![Screen shot of "Watson User Modeling" widget.](wex-um/ApplicationBuilder/watson-user-modeling-widget.png)
+![Screen shot of "Watson User Modeling" widget.](ApplicationBuilder/watson-user-modeling-widget.png)
 
 __*The "Sent Text" User Modeling widget*__
 
@@ -157,7 +157,7 @@ Once you have logged into the Application Builder Administration tool, follow th
 
 At this point the widget should be fully configured.  To test the widget, navigate to the Application Builder Home page.  Your widget should be visible.  Try entering your Twitter handle or using the IBM Watson Twitter stream, `IBMWatson`. Once you've submitted the form, your Bluemix service will fetch about 200 Twitter status updates for the provided handle. The resulting analysis from Watson will be displayed under the form in the widget.
 
-![Screen shot of Twitter-based user Modeling widget.](wex-um/ApplicationBuilder/user-modeling-twitter-analysis.png)
+![Screen shot of Twitter-based user Modeling widget.](ApplicationBuilder/user-modeling-twitter-analysis.png)
 
 __*The "Twitter Status" User Modeling widget*__
 
