@@ -13,7 +13,7 @@ Please see the [Introduction](/README.md) for an overview of the integration arc
 
 - An [IBM BlueMix](https://ace.ng.bluemix.net/) account
 - [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
-- [Application Builder proxy](proxy/) - Installed and configured
+- [Application Builder proxy](/proxy/) - Installed and configured
 
 
 ## What's Included in this Tutorial
@@ -140,7 +140,7 @@ These examples are intended for demonstrative purposes only.  While you might be
 - _Scalability_ - The example uses only a single cloud instance with the default Bluemix application settings.  In a production scenario consider how much hardware will be required and adjust the Bluemix application settings accordingly.
 - _User Experience_ - The example widgets are only meant to demonstrate basic interaction. For a custom application using Application Builder you should carefully consider widget placement, overall look and feel, user needs, and how Watson Machine Translation can provide value to end users.
 - _Wider Application_ - By itself, simple text translation is interesting, but there are opportunities for generating more value with further effort. Consider how on-demand real time translation might be used in your organization to eliminate language barriers.
-- _Performance_ - Rather than generating complete translations with every search, it is worth considering leveraging [the proxy](proxy/) to translate only the text that the end-user selects.  Or consider translation at index-time to produce an index for each of many languages.
+- _Performance_ - Rather than generating complete translations with every search, it is worth considering leveraging [the proxy](/proxy/) to translate only the text that the end-user selects.  Or consider translation at index-time to produce an index for each of many languages.
 
 
 ## Possible Use Cases for a Watson Machine Translation/Watson Explorer Integration
