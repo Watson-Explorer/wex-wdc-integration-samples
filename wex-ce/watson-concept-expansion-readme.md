@@ -59,9 +59,9 @@ To do that you'll need to know the endpoint for your Bluemix web service.  You c
 
 The provided Ruby-based command line tool called `get-expanded-concepts.rb` takes a list of terms, sends them to the Concept Expansion web service in Bluemix, and saves the returned list of concepts in a file as XML.
 
-[Ruby is required to run this script](/README.md).
+[Ruby is required to run this script](/README.md#required-development-tools-1).
 
-`
+```
 $> ruby get-expanded-concepts.rb --help
 Usage: get-expanded-concepts.rb -i input [options]
     -i, --in input                   Path to newline separated file that will be the input.
@@ -73,7 +73,7 @@ Usage: get-expanded-concepts.rb -i input [options]
     -t, --tries count                Optional. Number of times the service should attempt to fetch results before giving up.
 
 $> ruby get-expanded-concepts.rb --in=sample-input.txt --endpoint=http://wex-ce.mybluemix.net --label=Medications
-`
+```
 
 
 Default values are provided for all optional arguments.
@@ -81,7 +81,7 @@ Default values are provided for all optional arguments.
 
 ### Configuring the Watson Explorer Engine
 
-The output of the command line tool is an XML file suitable for ingestion as a query expansion ontolection. There is [an excellent tutorial available in the Watson Explorer documentation that describes how to crawl any files you create using the command line tool as an ontolection that can be used for query expansion or conceptual search](http://pic.dhe.ibm.com/infocenter/dataexpl/v9r0/index.jsp?topic=%2Fcom.ibm.swg.im.infosphere.dataexplorer.product.doc%2Fcom.ibm.swg.im.infosphere.dataexpl.engine.tut.cs.doc%2Ft_csearch-csearch-cs-ontolection.html). A custom ontolection collection [can be configured for use within Application Builder](http://pic.dhe.ibm.com/infocenter/dataexpl/v9r0/index.jsp?topic=%2Fcom.ibm.swg.im.infosphere.dataexplorer.product.doc%2Fcom.ibm.swg.im.infosphere.dataexpl.engine.tut.cs.doc%2Ft_csearch-csearch-cs-ontolection.html).
+The output of the command line tool is an XML file suitable for ingestion as a query expansion ontolection. There is [an excellent tutorial available in the Watson Explorer documentation](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.engine.tut.cs.doc/c_csearch-ontolection-tut.html?lang=en) that describes how to crawl any files you create using the command line tool as an ontolection that can be used for query expansion or conceptual search. A custom ontolection collection [can be configured for use within Application Builder](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/t_de-ab-devapp-search-qe.html?lang=en).
 
 
 ### Production and Deployment Considerations

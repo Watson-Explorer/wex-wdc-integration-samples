@@ -72,7 +72,7 @@ Once the application has finished restarting, you should now be able to run a te
 You can also test your Bluemix application and service by sending some text to the deployed servlet.  For example, try the following command:
 
 ```
-$> curl --data-urlencode "message=Jörg works for IBM. He was in the cloud two weeks ago." "http://wex-mr.mybluemix.net/resources/resonate"
+$> curl --data-urlencode "message=Jörg works for IBM. He was in the cloud two weeks ago." "http://YOUR_ENDPOINT.mybluemix.net/resources/resonate"
 ```
 ```JSON
 {"results":[{"word":"Jörg","score":"10","color":"black"},{"word":"works","score":"16","color":"cornflowerblue"},{"word":"for","score":"35","color":"goldenrod"},{"word":"IBM","score":"29","color":"lawngreen"},{"word":"He","score":"23","color":"lawngreen"},{"word":"was","score":"26","color":"lawngreen"},{"word":"in","score":"37","color":"goldenrod"},{"word":"the","score":"40","color":"goldenrod"},{"word":"cloud","score":"42","color":"crimson"},{"word":"two","score":"20","color":"cornflowerblue"},{"word":"weeks","score":"15","color":"cornflowerblue"},{"word":"ago","score":"16","color":"cornflowerblue"}]}
@@ -81,7 +81,7 @@ $> curl --data-urlencode "message=Jörg works for IBM. He was in the cloud two w
 
 ### Configuring the Watson Explorer Application Builder
 
-Assuming you have completed the first [Application Builder tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html), you will have a search page.  Let's add a message resonance widget that will analyse the user's query for impact. 
+Assuming you have completed the first [Application Builder tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html), you will have a search page.  Let's add a message resonance widget that will analyze the user's query for impact. 
 
 #### Building a Widget that Sends Text to the Watson Message Resonance Service
 
@@ -99,7 +99,7 @@ Once you have logged into the Application Builder administrative interface, foll
 8. Go back to the Searches page
 9. Drag the `Watson_MR` widget to the top of the center column of the Searches page and save the page configuration.
 
-At this point the widget should be fully configured.  To test the widget, navigate to the application and enter a search string.  Try the same string you tried with curl.  Above the search results area, you should see your widget containing a copy of the query color-coded to represent resonance.  Hover over each word in the widget to see the exact resonance score.
+At this point the widget should be fully configured.  To test the widget, navigate to the application and enter a search string.  Above the search results area, you should see your widget containing a copy of the query color-coded to represent resonance.  Hover over each word in the widget to see the exact resonance score.
 
 This simple example illustrates a basic integration.
 
@@ -125,5 +125,5 @@ These examples are intended for demonstrative purposes only.  While you might be
 ## Possible Use Cases for a Watson Message Resonance/Watson Explorer Integration
  Here are some ideas to help get you started thinking about how Watson Message Resonance might be fully integrated into a Watson Explorer application.
 
-- Score passages or metadata based on target users' preferred vernacular (for example: by training using targeted social data) to enable search relevancy tuning.
+- Score passages or metadata based on target users' preferred vernacular (for example: by using a training corpus targeted at social data) to enable search relevancy tuning.
 - Combine with a thesaurus indexed using Watson Explorer to identify high value permutations for a given phrase.  Such a service might be used within an Application Builder widget or in applications outside the context of Watson Explorer.

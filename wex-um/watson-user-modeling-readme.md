@@ -15,7 +15,7 @@ Please see the [Introduction](/README.md) for an overview of the integration arc
 - [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
 - [Application Builder proxy](/proxy/) - Installed and configured
 - A basic search application configured in Application Builder. For the purposes of this example, the [example-metadata based tutorial application](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) is sufficient.
-- (Optional) [Prerequisites for creating a Bluemix Ruby based application](/README.md). This prerequisite is required if you would like to develop Ruby applications on your local machine.
+- (Optional) [Prerequisites for creating a Bluemix Ruby based application](/README.md#ruby-sinatra-web-based-applications). This prerequisite is required if you would like to develop Ruby applications on your local machine.
 - (Optional) A Twitter account with API access.  This will be used to fetch status updates given a user's Twitter handle in one of the example widgets.
 
 ## What's Included in this Tutorial
@@ -34,7 +34,7 @@ This section outlines the steps required to create a basic Watson User Modeling 
    
 ### Configuring and Deploying the BlueMix Custom Watson User Modeling Web Service
 
-The example Bluemix application uses a `manifest.yml` file to specify the application name, services bindings, and basic application settings.  Using a manifest simplifies distribution and deployment of CloudFoundry applications (for example, Bluemix).  Since the example application is written in Ruby, the code can be deployed to Bluemix as is. Ruby develpment tools are only required if you would like to develop and test the application locally.
+The example Bluemix application uses a `manifest.yml` file to specify the application name, services bindings, and basic application settings.  Using a manifest simplifies distribution and deployment of CloudFoundry applications (for example, Bluemix).  Since the example application is written in Ruby, the code can be deployed to Bluemix as is. Ruby development tools are only required if you would like to develop and test the application locally.
 
 If you have not already, sign in to Bluemix.
 
@@ -86,7 +86,7 @@ Please note that the Twitter API has limits on the number of requests that can b
 
 ### Configuring the Watson Explorer Engine
 
-This example requires that example metadata is crawled and configured for use in Application Builder. If you have not already created a basic application using the example-metadata content, see the [pre-requisites for searching with Engine](/README.md). The Application Builder Tutorial can be found in the [Watson Explorer documentation.](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) 
+This example requires that example metadata is crawled and configured for use in Application Builder. If you have not already created a basic application using the example-metadata content, see the [pre-requisites for searching with Engine](/README.md#watson-explorer). The Application Builder Tutorial can be found in the [Watson Explorer documentation.](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) 
 
 ### Configuring the Watson Explorer Application Builder
 
@@ -118,9 +118,9 @@ Once you have logged into the Application Builder Administration tool, follow th
 8. Go back to the Book Title page
 9. Add the `Watson_UM` widget to the Book Title page and save the page configuration.
 
-At this point the widget should be fully configured.  To test the widget, navigate to the application and choose a Book Title entity. I picked "Lug Nuts!" in the image below.  The title from "Lug Nuts!" is used to create the model shown. 
+At this point the widget should be fully configured.  To test the widget, navigate to the application and choose a Book Title entity. The example shown in the below image uses the title from "Lug Nuts!" to create the model displayed. 
 
-This simple example illustrates a basic integration. You should choose text that is relevant to a user or entity that you are modeling and you must provide enough text to generate a reliable model.  See the [User Modeling documentation]() for more guidance on text selection and recommendations.
+This simple example illustrates a basic integration. You should choose text that is relevant to a user or entity that you are modeling and you must provide enough text to generate a reliable model.  See the [User Modeling documentation](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/user-modeling.html) for more guidance on text selection and recommendations.
 
 ![Screen shot of "Watson User Modeling" widget.](ApplicationBuilder/watson-user-modeling-widget.png)
 
