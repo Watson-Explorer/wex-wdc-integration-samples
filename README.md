@@ -31,7 +31,7 @@ There are five basic integration patterns for combining Watson Explorer and Wats
 2. **In the client browser**.  Once a page is rendered in a user's browser there may be use cases in which you would want to allow a user to interact with a WDC application without refreshing the page. For example, a user might dialog with Watson Q&A from an entity page.  At this time the included proxy must be used to satisfy the end-user's browser same-origin policy.
 3. **At crawl time**.  The [Relationship Extraction Integration](wex-re/watson-re-readme.md) provides an example of an Engine converter that indexes the data returned from the Relationship Extraction service.
 4. **At query time**.  It is also possible to access WDC applications at query time from Engine.
-5. **Pre- or post-process**. In some cases it is useful to use a WDC application as a pre- or post-processing step and the output of this is used by Watson Explorer application in some way.
+5. **Pre- or post-process**. In some cases it is useful to use a WDC application as a pre- or post-processing step and the output of this is used by the Watson Explorer application in some way.
 
 
 ![Overview of the two options for integration](watson-services-integration.png)
@@ -48,7 +48,7 @@ Steps for Bluemix setup:
 2. Install the [Cloud Foundry command line tool](https://www.ng.bluemix.net/docs/#starters/BuildingWeb.html#install_cf)
 
 ## Java Web-Based Applications
-Some examples like the **Question and Answer Service** and the **Machine Translation Service** are a Java-based Bluemix application. The following steps get you setup and running for development of these applications. 
+Some examples like the **Question and Answer Service** and the **Machine Translation Service** are a Java-based Bluemix applications. The following steps get you setup and running for development of these applications. 
 
 ### Required development tools
 - A JDK is required to compile the Java code. Download and install [IBM JDK 1.7](http://www.ibm.com/developerworks/java/jdk/eclipse/index.html)  
@@ -72,7 +72,7 @@ Some examples like the **User Modeling Service** and the **Concept Expansion Ser
 
 ### Required development tools
 - Ruby is required to compile the code. Download and install [Ruby 1.9.3](http://rubyinstaller.org/downloads/)
-- Ruby Devkit is useful for development. Download and install [Ruby DevKit 4.5.2](http://rubyinstaller.org/downloads/)
+- Ruby DevKit is useful for development on Windows. Download and install [Ruby DevKit 4.5.2](http://rubyinstaller.org/downloads/)
 - JRuby is used in the Proxy development. Download and install [JRuby 1.7.13](http://www.jruby.org/download)
 
 ### Required libraries
