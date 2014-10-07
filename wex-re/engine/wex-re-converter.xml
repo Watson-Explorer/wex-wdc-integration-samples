@@ -13,7 +13,7 @@
   <!-- When we have a snippet, we want to copy it too.
        But we also want to insert some addition contents that contain
        info from SIRE -->
-  <xsl:variable name="url" select="'http://wce-re.mybluemix.net/api/extract'" />
+  <xsl:variable name="url" select="'http://wex-re.mybluemix.net/api/extract'" />
   <xsl:variable name="xml">
     <parse url="{$url}" method="POST">
       <parse-param name="sid">
