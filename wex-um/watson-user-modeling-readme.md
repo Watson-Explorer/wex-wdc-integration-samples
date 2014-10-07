@@ -86,7 +86,7 @@ Please note that the Twitter API has limits on the number of requests that can b
 
 ### Configuring the Watson Explorer Engine
 
-This example requires that example metadata is crawled and configured for use in Application Builder. If you have not already created a basic application using the example-metadata content, see the [pre-requisites for searching with Engine](/README.md). The Application Builder Tutorial can be found in the [Watson Content Explorer documentation.](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) 
+This example requires that example metadata is crawled and configured for use in Application Builder. If you have not already created a basic application using the example-metadata content, see the [pre-requisites for searching with Engine](/README.md). The Application Builder Tutorial can be found in the [Watson Explorer documentation.](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html) 
 
 ### Configuring the Watson Explorer Application Builder
 
