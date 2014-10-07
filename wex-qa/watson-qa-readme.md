@@ -6,12 +6,12 @@ Since one of the primary goals of [Watson Explorer](http://www.ibm.com/smarterpl
 
 The goal of this tutorial is to demonstrate how to get started with an integration between Watson Explorer and the Watson Q&A service available on IBM Bluemix.  By the end of the tutorial you will have added two widgets to Watson Explorer Application Builder.  One widget enables users to submit queries against both the Watson Explorer Engine and Watson Q&A Service.  A second widget demonstrates how users can continue interacting with Watson Q&A from an Application Builder entity page.
 
-![Screen shot of "Watson Answers" widget with search results from Engine.](wex-qa/ApplicationBuilder/watson-answers-search-widget.png)
+![Screen shot of "Watson Answers" widget with search results from Engine.](ApplicationBuilder/watson-answers-search-widget.png)
 
 __*Q&A widget #1 "Watson Answers" widget enables users to submit queries against both the Watson Explorer and the Watson Q&A Service*__
 
 
-![Screen shot of "Ask Watson" ajax enabled widget.](wex-qa/ApplicationBuilder/ask-watson-ajax-widget.png)
+![Screen shot of "Ask Watson" ajax enabled widget.](ApplicationBuilder/ask-watson-ajax-widget.png)
 
 __*Q&A Widget #2 "Ask Watson" widget demonstrates how users can continue interacting with Watson Q&A from an Application Builder entity page without performing a new search*__
 
