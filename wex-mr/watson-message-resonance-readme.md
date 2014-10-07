@@ -119,7 +119,7 @@ These examples are intended for demonstrative purposes only.  While you might be
 - _Scalability_ - The example uses only a single cloud instance with the default Bluemix application settings.  In a production scenario consider how much hardware will be required and adjust the Bluemix application settings accordingly.
 - _User Experience_ - The example widgets are only meant to demonstrate basic interaction. For a custom application using Application Builder you should carefully consider widget placement, overall look and feel, user needs, and how Watson Message Resonance can provide value to end users.
 - _Wider Application_ - By itself, message resonance is interesting, but there are opportunities for generating more value with further effort. Consider how on-demand real time evaluation of text as it is typed might be used in your organization to improve the impact of user input and communication in general.
-- _Performance_ - Rather than generating complete analysis with every search, it is worth considering leveraging [the proxy](proxy/) to analyse only the text that the end-user selects.  Or consider resonance analysis at index-time to enrich the index with an impact rating for document titles.
+- _Performance_ - Rather than generating complete analysis with every search, it is worth considering leveraging [the proxy](/proxy/) to analyse only the text that the end-user selects.  Or consider resonance analysis at index-time to enrich the index with an impact rating for document titles.
 
 
 ## Possible Use Cases for a Watson Message Resonance/Watson Explorer Integration
