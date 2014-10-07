@@ -4,7 +4,7 @@ The [Watson Relationship Extractor Service](http://www.ibm.com/smarterplanet/us/
 
 The goal of this tutorial is to demonstrate how to get started with an integration between Watson Explorer and the Watson Relationship Extractor service available on IBM Bluemix. By the end of the tutorial you will have added a refinement widget to Watson Explorer Application Builder that uses information extracted using an annotator (entity extractor) added to the conversion pipeline of Watson Explorer Engine.
 
-![Screen shot of "Navigation" widget with extracted entities](wex-re/ApplicationBuilder/watson-re-widget.png)
+![Screen shot of "Navigation" widget with extracted entities](ApplicationBuilder/watson-re-widget.png)
 
 __*The "Navigation" widget displaying extracted entities*__
 
@@ -83,19 +83,19 @@ To configure Engine for this example you will need to do the following:
 
 A common use for the type of processing done by the Watson Relationship Extractor Service is index enrichment.  That is, we can apply Relationship Extraction to ingested data and store the resulting analysis in the index as metadata that can be used at search time or in the display.
 
-One way to accomplish this task is to use the Watson Relationship Extractor Service at crawl time from a Watson Explorer converter. The [example converter provided in this example](Engine/wex-re-converter.xml) was developed to be used as a part of the out-of-the-box example-metadata search collection.  For each document, the example converter sends the snippet text to the Watson Relationship Extractor Service and then stores the results from the Relationship Extractor service in a new content nodes with names based on the entity type determined by the service.
+One way to accomplish this task is to use the Watson Relationship Extractor Service at crawl time from a Watson Explorer converter. The [example converter provided in this example](engine/wex-re-converter.xml) was developed to be used as a part of the out-of-the-box example-metadata search collection.  For each document, the example converter sends the snippet text to the Watson Relationship Extractor Service and then stores the results from the Relationship Extractor service in a new content nodes with names based on the entity type determined by the service.
 
 To use the example converter, go to the Watson Explorer Engine administrator tool interface and create a new collection based on example-metadata.  Name it 'example-metadata-watson'.
 
 
-![Screen shot of creating a new search collection.](wex-re/ApplicationBuilder/watson-re-addnewcollection.png)
+![Screen shot of creating a new search collection.](ApplicationBuilder/watson-re-addnewcollection.png)
 
 __*Creating a new search collection*__
 
 
 Go to the XML of the collection, click "edit" and paste the example converter XML into the converters section, immediately after the “Create Metadata from Content” converter.
 
-![Screen shot of inserting the converter into the collection XML.](wex-re/ApplicationBuilder/watson-re-insertconverter.png)
+![Screen shot of inserting the converter into the collection XML.](ApplicationBuilder/watson-re-insertconverter.png)
 
 __*Inserting the converter into the collection XML*__
 
@@ -118,7 +118,7 @@ Switch to the Overview tab in the collection and click Start to initiate a new c
 After the crawl has completed, perform a test search.  You should now see the new additional metadata that has been added to the document. 
 
 
-![Screen shot of the newly extracted contents ](wex-re/ApplicationBuilder/watson-re-newcontents.png)
+![Screen shot of the newly extracted contents ](ApplicationBuilder/watson-re-newcontents.png)
 
 __*The newly extracted contents*__
 
@@ -162,7 +162,7 @@ Next, follow these steps to create the refinement widget and add it to the searc
 
 At this point the widget should be fully configured.  To test the widget, navigate to the application and perform a search.  A null search will be most effective in this case to allow you to see the full listing of person entities extracted from the documents. 
 
-![Screen shot of  Person refinement widget with search results from Engine.](wex-re/ApplicationBuilder/watson-re-personrefinement.png)
+![Screen shot of  Person refinement widget with search results from Engine.](ApplicationBuilder/watson-re-personrefinement.png)
 
 __*Person refinement widget with search results from Engine*__
 
