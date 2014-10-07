@@ -1,15 +1,15 @@
-# Using Watson Relationship Extractor Service with Watson Explorer
+# Using Watson Relationship Extraction Service with Watson Explorer
 
-The [Watson Relationship Extractor Service](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/relationship-extraction.html) analyzes text to find entities &mdash; including names, events, and dates &mdash; as well as the relationships among them. The extraction of entities such as names and dates is called entity extraction and is frequently used in search-based applications for categorizing data and creating hierarchies that can be used for navigation through a result set.  [Watson Explorer](http://www.ibm.com/smarterplanet/us/en/ibmwatson/explorer.html) can use extracted entities to aid in information discovery by improving navigation through uncategorized content.
+The [Watson Relationship Extraction Service](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/relationship-extraction.html) analyzes text to find entities &mdash; including names, events, and dates &mdash; as well as the relationships among them. The extraction of entities such as names and dates is called entity extraction and is frequently used in search-based applications for categorizing data and creating hierarchies that can be used for navigation through a result set.  [Watson Explorer](http://www.ibm.com/smarterplanet/us/en/ibmwatson/explorer.html) can use extracted entities to aid in information discovery by improving navigation through uncategorized content.
 
-The goal of this tutorial is to demonstrate how to get started with an integration between Watson Explorer and the Watson Relationship Extractor service available on IBM Bluemix. By the end of the tutorial you will have added a refinement widget to Watson Explorer Application Builder that uses information extracted using an annotator (entity extractor) added to the conversion pipeline of Watson Explorer Engine.
+The goal of this tutorial is to demonstrate how to get started with an integration between Watson Explorer and the Watson Relationship Extraction service available on IBM Bluemix. By the end of the tutorial you will have added a refinement widget to Watson Explorer Application Builder that uses information extracted using an annotator (entity extractor) added to the conversion pipeline of Watson Explorer Engine.
 
 ![Screen shot of "Navigation" widget with extracted entities](ApplicationBuilder/watson-re-widget.png)
 
 __*The "Navigation" widget displaying extracted entities*__
 
 
-For the initial release, Watson Relationship Extractor offers two APIs: Annotator for English and Annotator for Spanish news models.
+For the initial release, Watson Relationship Extraction offers two APIs: Annotator for English and Annotator for Spanish news models.
 
 
 ## Prerequisites
@@ -23,19 +23,19 @@ Please see the [Introduction](/README.md) for an overview of the integration arc
 
 This tutorial will walk through the creation and deployment of three components.
 
-1. A basic Bluemix application exposing the Watson Relationship Extractor service as a web service.
+1. A basic Bluemix application exposing the Watson Relationship Extraction service as a web service.
 2. A Watson Explorer Engine custom converter. This converter sends text to the Bluemix application and uses the response to enrich searchable metadata for indexed documents.
 3. An Application Builder widget that uses the extracted, indexed metadata to provide filtering through search result refinement.
 
 
 ## Step-by-Step Tutorial
 
-This section outlines the steps required to create a basic Watson Relationship Extractor widget in Application Builder, the custom converter in Engine, and the Bluemix service used by the custom converter.
+This section outlines the steps required to create a basic Watson Relationship Extraction widget in Application Builder, the custom converter in Engine, and the Bluemix service used by the custom converter.
 
    
-### Configuring and Deploying the Bluemix Custom Watson Relationship Extractor Web Service
+### Configuring and Deploying the Bluemix Custom Watson Relationship Extraction Web Service
 
-The example Bluemix application uses a `manifest.yml` file to specify the application name, services bindings, and basic application settings.  Using a manifest simplifies distribution and deployment of CloudFoundry applications.  To deploy the Watson Relationship Extractor example application you'll need to compile the web service application and deploy it to your Bluemix account.
+The example Bluemix application uses a `manifest.yml` file to specify the application name, services bindings, and basic application settings.  Using a manifest simplifies distribution and deployment of CloudFoundry applications.  To deploy the Watson Relationship Extraction example application you'll need to compile the web service application and deploy it to your Bluemix account.
 
 If you have not done so already, sign in to Bluemix.
 
@@ -45,7 +45,7 @@ cf login
 ```
 
 
-Once you are signed in, you will need to create the Watson Relationship Extractor service that the example application will be binding to.  In this example, we're calling the service `wex-re` (this name is already set in the `manifest.yml`).  Since services might be used by multiple applications, this name isn't ideal, but it's perfectly suitable for this example.
+Once you are signed in, you will need to create the Watson Relationship Extraction service that the example application will be binding to.  In this example, we're calling the service `wex-re` (this name is already set in the `manifest.yml`).  Since services might be used by multiple applications, this name isn't ideal, but it's perfectly suitable for this example.
 
 ```
 $> cf create-service "sire" free wex-re
@@ -81,9 +81,9 @@ To configure Engine for this example you will need to do the following:
 4. Verify that Engine is configured properly.
 
 
-A common use for the type of processing done by the Watson Relationship Extractor Service is index enrichment.  That is, we can apply Relationship Extraction to ingested data and store the resulting analysis in the index as metadata that can be used at search time or in the display.
+A common use for the type of processing done by the Watson Relationship Extraction Service is index enrichment.  That is, we can apply Relationship Extraction to ingested data and store the resulting analysis in the index as metadata that can be used at search time or in the display.
 
-One way to accomplish this task is to use the Watson Relationship Extractor Service at crawl time from a Watson Explorer converter. The [example converter provided in this example](engine/wex-re-converter.xml) was developed to be used as a part of the out-of-the-box example-metadata search collection.  For each document, the example converter sends the snippet text to the Watson Relationship Extractor Service and then stores the results from the Relationship Extractor service in a new content nodes with names based on the entity type determined by the service.
+One way to accomplish this task is to use the Watson Relationship Extraction Service at crawl time from a Watson Explorer converter. The [example converter provided in this example](engine/wex-re-converter.xml) was developed to be used as a part of the out-of-the-box example-metadata search collection.  For each document, the example converter sends the snippet text to the Watson Relationship Extraction Service and then stores the results from the Relationship Extraction service in a new content nodes with names based on the entity type determined by the service.
 
 To use the example converter, go to the Watson Explorer Engine administrator tool interface and create a new collection based on example-metadata.  Name it 'example-metadata-watson'.
 
@@ -122,12 +122,12 @@ After the crawl has completed, perform a test search.  You should now see the ne
 
 __*The newly extracted contents*__
 
-The custom converter we added extracts entities that were identified by the Watson Relationship Extractor service, and creates fast indexed content nodes in the document for each extracted entity. The values of each extracted entity will be visible in search and, since they are also fast indexed, can be used to create refinements and associations in Watson Explorer Application Builder.
+The custom converter we added extracts entities that were identified by the Watson Relationship Extraction service, and creates fast indexed content nodes in the document for each extracted entity. The values of each extracted entity will be visible in search and, since they are also fast indexed, can be used to create refinements and associations in Watson Explorer Application Builder.
 
 
 ### Configuring the Watson Explorer Application Builder
 
-Since the integration between Watson Explorer Engine and the Watson Relationship extractor service has already created fast-indexed entities in the search index, the process of displaying these navigation aids to the user is trivial.  The following steps show how to create refinement widgets based off of the extracted content. 
+Since the integration between Watson Explorer Engine and the Watson Relationship Extraction service has already created fast-indexed entities in the search index, the process of displaying these navigation aids to the user is trivial.  The following steps show how to create refinement widgets based off of the extracted content. 
 
 
 #### Building the Watson Extracted Entities Refinement Widget
@@ -168,7 +168,7 @@ __*Person refinement widget with search results from Engine*__
 
 Our example pulled all entities and fast indexed them to prepare for creating the refinement widget. Ideally you would not need or want to do this, as you may find that not all extractions are useful to your users. In addition, the example widget only refines on one extracted entity, you could create multiple refinements with these values or use them for sorting capabilities as well.
 
-Notice that words like "he," "him," "you," and "her" are added as refinements.  The Watson Relationship Extractor service does provide relationship information so that it is possible in many circumstances to know exactly who a specific pronoun such as "he" is referencing.  This example does not take the specific relationships into account when creating fast-indexed metadata content, but substituting pronouns and partial names for a canonical is a high value application of the information provided by the Watson Relationship Extraction web service.
+Notice that words like "he," "him," "you," and "her" are added as refinements.  The Watson Relationship Extraction service does provide relationship information so that it is possible in many circumstances to know exactly who a specific pronoun such as "he" is referencing.  This example does not take the specific relationships into account when creating fast-indexed metadata content, but substituting pronouns and partial names for a canonical is a high value application of the information provided by the Watson Relationship Extraction web service.
 
 
 ### Production and Deployment Considerations
@@ -179,13 +179,13 @@ These examples are intended for demonstrative purposes only.  While you might be
 - _Security_ - The example BlueMix applications are completely open and have no security.
 - _Scalability_ - This example uses only a single cloud instance with the default Bluemix application settings.  In a production scenario consider how much hardware will be required and adjust the Bluemix application settings accordingly.
 - _Reliability_ - Calling a web service can and will fail. When this happens in a converter, the document will not be indexed which is likely not a desired outcome.  The example does not attempt to retry in the event of failure, nor does the example allow for having a partially updated document (for example, only the ingested text without annotations in the event that the web service call to Bluemix fails).
-- _User Experience_ - The example widgets are only meant to demonstrate basic interaction. For a custom application using Application Builder you should carefully consider widget placement, overall look and feel, user needs, and how Watson Relationship Extractor can provide value to end users.
+- _User Experience_ - The example widgets are only meant to demonstrate basic interaction. For a custom application using Application Builder you should carefully consider widget placement, overall look and feel, user needs, and how Watson Relationship Extraction can provide value to end users.
 - _Crawl Performance_ - Calling out to a web service from a converter can significantly increase the amount of time required for indexing content when ingesting extremely large data sets. If you are indexing extremely large datasets, there are other metadata enrichment strategies that might be used to promote specific desired quality attributes relevant to your specific needs.
 
 
 ## Possible Use Cases for a Watson Relationship Extraction and Watson Explorer Integration
 
-Entity extraction can provide taxonomy useful for faceted navigation in search-based applications and deeper connectedness in "360 Degree View" applications.  The addition of relationship information side-by-side with entity extraction creates huge value-adding opportunities. Here are some ideas to help get you started for how Watson Relationship Extractor might be fully integrated into a Watson Explorer application.
+Entity extraction can provide taxonomy useful for faceted navigation in search-based applications and deeper connectedness in "360 Degree View" applications.  The addition of relationship information side-by-side with entity extraction creates huge value-adding opportunities. Here are some ideas to help get you started for how Watson Relationship Extraction might be fully integrated into a Watson Explorer application.
 
 * Use extracted entities to provide faceted navigation of persons, locations, and organizations as shown in this example. 
 * Use mentions, entities, and the relations between them to construct a graphical representation of the relationships, allowing the user to navigate between common themes among documents. 
