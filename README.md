@@ -13,7 +13,7 @@ Before beginning the tutorials you should review the prerequisites provided belo
 1. [Message Resonance Integration](wex-mr/watson-message-resonance-readme.md)
 2. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
 3. [Question and Answer Integration](wex-qa/watson-qa-readme.md)
-4. [Relationship Extractor Integration](wex-re/watson-re-readme.md)
+4. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
 5. [User Modeling Integration](wex-um/watson-user-modeling-readme.md)
 6. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
 
@@ -29,7 +29,7 @@ There are five basic integration patterns for combining Watson Explorer and Wats
 
 1. **Application Builder Widget**. The most common place to use a cognitive service is from within an Application Builder widget.  Most examples here demonstrate this.
 2. **In the client browser**.  Once a page is rendered in a user's browser there may be use cases in which you would want to allow a user to interact with a WDC application without refreshing the page. For example, a user might dialog with Watson Q&A from an entity page.  At this time the included proxy must be used to satisfy the end-user's browser same-origin policy.
-3. **At crawl time**.  The [Relationship Extractor Integration](wex-re/watson-re-readme.md) provides an example of an Engine converter that indexes the data returned from the Relationship Extractor service.
+3. **At crawl time**.  The [Relationship Extraction Integration](wex-re/watson-re-readme.md) provides an example of an Engine converter that indexes the data returned from the Relationship Extraction service.
 4. **At query time**.  It is also possible to access WDC applications at query time from Engine.
 5. **Pre- or post-process**. In some cases it is useful to use a WDC application as a pre- or post-processing step and the output of this is used by Watson Explorer application in some way.
 
