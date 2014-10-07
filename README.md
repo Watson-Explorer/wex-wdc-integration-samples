@@ -18,7 +18,7 @@ Before beginning the tutorials you should review the prerequisites provided belo
 6. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
 
 # Architecture
-The integration between Watson Developer Cloud (WDC) and Watson Explorer follows relatively straightforward web services patterns. All of the WDC services use a basic REST API. This makes it realatively easy to use WDC services from WDC applications. The example WDC applications here also use a simple REST API to facilitate communiation between the WDC application and Watson Explorer.  Communication between a Watson Explorer application and a deployed WDC application is accomplished in two ways.
+The integration between Watson Developer Cloud (WDC) and Watson Explorer follows relatively straightforward web services patterns. All of the WDC services use a basic REST API. This makes it relatively easy to use WDC services from WDC applications. The example WDC applications here also use a simple REST API to facilitate communication between the WDC application and Watson Explorer.  Communication between a Watson Explorer application and a deployed WDC application is accomplished in two ways.
 
 1. Watson Explorer Engine can communicate with WDC applications via a parser node (parser nodes in Engine allow for advanced and basic web requests to be made).
 2. Watson Explorer Application Builder widgets communicate with WDC applications by going through a proxy deployed to the same web server as Application Builder.
@@ -27,7 +27,7 @@ The sample proxy enables two important properties.  First, browsers enforce a sa
 
 There are five basic integration patterns for combining Watson Explorer and Watson Developer Cloud.  The specific integration pattern used will depend on the use cases and desired functionality.
 
-1. **Appliation Builder Widget**. The most common place to use a cognitive service is from within an Application Builder widget.  Most examples here demonstrate this.
+1. **Application Builder Widget**. The most common place to use a cognitive service is from within an Application Builder widget.  Most examples here demonstrate this.
 2. **In the client browser**.  Once a page is rendered in a user's browser there may be use cases in which you would want to allow a user to interact with a WDC application without refreshing the page. For example, a user might dialog with Watson Q&A from an entity page.  At this time the included proxy must be used to satisfy the end-user's browser same-origin policy.
 3. **At crawl time**.  The [Relationship Extractor Integration](wex-re/watson-re-readme.md) provides an example of an Engine converter that indexes the data returned from the Relationship Extractor service.
 4. **At query time**.  It is also possible to access WDC applications at query time from Engine.
