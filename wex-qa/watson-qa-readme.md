@@ -25,7 +25,7 @@ Please see the [Introduction](/README.md) for an overview of the integration arc
 
 - An [IBM Bluemix](https://ace.ng.bluemix.net/) account
 - [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
-- [Application Builder proxy](proxy/) - Installed and configured
+- [Application Builder proxy](/proxy/) - Installed and configured
 
 
 ## What's Included in this Tutorial
@@ -85,9 +85,9 @@ This example can be run on its own and does not depend on any Engine configurati
 
 ### Configuring the Watson Explorer Application Builder
 
-This example includes two widgets.  Both custom widgets require the use of the [Application Builder Proxy](proxy/).
+This example includes two widgets.  Both custom widgets require the use of the [Application Builder Proxy](/proxy/).
 
-First, [update the Application Builder Proxy configuration](proxy/config.ru) to point to your deployed Bluemix application.  Reset the Application Builder server.
+First, [update the Application Builder Proxy configuration](/proxy/config.ru) to point to your deployed Bluemix application.  Reset the Application Builder server.
 
 
 ```ruby
