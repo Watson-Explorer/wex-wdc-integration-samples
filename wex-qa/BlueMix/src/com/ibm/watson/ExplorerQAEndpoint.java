@@ -58,7 +58,7 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
             vcapCredentials = getCredentials(VCAP_SERVICES, Service_Name);
             try {
                 // get the credential contents
-                userid = vcapCredentials.getString("userid");
+                userid = vcapCredentials.getString("username");
                 password = vcapCredentials.getString("password");
                 restServerURL = vcapCredentials.getString("url");
             } catch (NullPointerException | JSONException e) {

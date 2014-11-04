@@ -11,7 +11,7 @@ The goal of this tutorial is to demonstrate how to get started with an integrati
 Please see the [Introduction](/README.md) for an overview of the integration architecture, and the tools and libraries that need to be installed to create Ruby-based applications in Bluemix. This prerequisite is required to run the local command line tool, which is written in Ruby.
 
 - An [IBM Bluemix](https://ace.ng.Bluemix.net/) account
-- [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
+- [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_10.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
 
 
 

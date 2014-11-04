@@ -12,7 +12,7 @@ The goal of this example is to demonstrate how to get started with an integratio
 Please see the [Introduction](/README.md) for an overview of the integration architecture, and the tools and libraries that need to be installed to create Java-based applications in Bluemix.
 
 - An [IBM Bluemix](https://ace.ng.bluemix.net/) account
-- [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
+- [Watson Explorer](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_10.0.0/com.ibm.swg.im.infosphere.dataexpl.install.doc/c_install_wrapper.html) - Installed, configured, and running
 - [Application Builder proxy](/proxy/) - Installed and configured
 
 
