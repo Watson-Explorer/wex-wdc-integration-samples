@@ -45,7 +45,7 @@ Bluemix provides multiple different runtimes for your cloud-based application. I
 Steps for Bluemix setup:
 
 1. Register for an account on [Bluemix](http://ace.ng.bluemix.net)
-2. Install the [Cloud Foundry command line tool](https://www.ng.bluemix.net/docs/#starters/BuildingWeb.html#install_cf)
+2. Install the [Cloud Foundry command line tool](https://github.com/cloudfoundry/cli/releases), [installation instructions](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html)
 
 ## Java Web-Based Applications
 Some examples like the **Question and Answer Service** and the **Machine Translation Service** are a Java-based Bluemix applications. The following steps get you setup and running for development of these applications. 
