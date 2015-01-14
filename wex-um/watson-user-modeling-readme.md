@@ -47,9 +47,10 @@ cf login
 Once you are signed in, you will need to create the Watson User Modeling service that the example application will bind to.  In this example, we're calling the service `wex-um`. This name is already set in the `manifest.yml`.  Since services might be used by multiple applications, this name isn't ideal (a more descriptive name can improve maintainability), but it's perfectly suitable for this example.
 
 ```
-$> cf create-service "systemudemoapisl-prod" systemudemo_plan_free wex-um
+$> cf create-service "user_modeling" user_modeling_free_plan wex-um-service
 ```
 
+Note that at the time this tutorial was publised the user modeling service was in beta.  Final service names are subject ot change and the above command may not work if the names changed.  Use `cf marketplace` to list all services available or log into your BlueMix dashboard to review the current services catalog.
 
 Next, deploy the application to your space in the Bluemix cloud.  If this is the first time deploying, the application will be created for you.  Subsequent pushes to Bluemix will overwrite the previous instances you deployed.
 
@@ -59,6 +60,8 @@ $> cf push
 
 
 Once the application has finished restarting, you should now be able to run a test using the simple application test runner included in the application.  You can see the route that was created for your application with `cf routes`.  The running application URL can be determined by combining the host and domain from the routes listing.  You can also find this information in the `manifest.yml` file. By default the route should be `wex-um.mybluemix.net`.  The route is also available from your application dashboard in Bluemix.
+
+Again, please note that at the time this tutorial was created this service was in beta.  We noticed that occasionally the VCAP_SERVICES have changed which can result in the errors when starting the app (e.g. can't find an environment variable that is assumed to be present) or failures when running the app (such as a 404 becuase the URL held in VCAP_SERVICES has changed). We'll try to update problems as we find them, but keep an eye out for issues like this.  Pull requests are always welcome to fix problems in the code or docs.  
 
 
 #### Configuring the BlueMix Application for Twitter API Access

@@ -27,7 +27,7 @@ class ApplicationController < Sinatra::Base
        service_info = JSON.parse(ENV["VCAP_SERVICES"])
        credentials = service_info[service_name].first["credentials"]
 
-       endpoint[:url] = credentials["api_url"]
+       endpoint[:url] = credentials["url"]
        endpoint[:username] = credentials["username"]
        endpoint[:password] = credentials["password"]
       
@@ -56,7 +56,7 @@ class ApplicationController < Sinatra::Base
      set :about, about
 
      # get the endpoint, username, and password
-     endpoint_info = get_endpoint_for("systemudemoapisl-prod")
+     endpoint_info = get_endpoint_for("user_modeling")
      set :endpoint, endpoint_info
    end
 

@@ -83,7 +83,7 @@ module ApiHelpers
    def calculate_model(data)
       payload = { :contentItems => data }
 
-      function = "/systemu/api/v2/profile"
+      function = "/api/v2/profile"
       response = post(settings.endpoint[:url] + function,
                       settings.endpoint[:username],
                       settings.endpoint[:password],
@@ -93,7 +93,7 @@ module ApiHelpers
 
 
   def visualize_model(payload)
-      function = "/systemu/api/v2/visualize"
+      function = "/api/v2/visualize"
       response = post(settings.endpoint[:url] + function,
                       settings.endpoint[:username],
                       settings.endpoint[:password],
