@@ -23,10 +23,10 @@ end
 #   {
 #      "text" : "The text from which the user model should be created"
 #   }
-post '/um/model_text/' do
+post '/pi/model_text/' do
    data = JSON.load(request.body)
 
-   url = "#{settings.um_endpoint}model_text/"
+   url = "#{settings.personality_insights_endpoint}model_text/"
    body = { :text => data["text"] }
    headers = {
       "Content-Type" => "application/json"
@@ -43,10 +43,10 @@ end
 #   {
 #      "text" : "The text from which the user model should be created"
 #   }
-post '/um/visualize_text/' do
+post '/pi/visualize_text/' do
    data = JSON.load(request.body)
 
-   url = "#{settings.um_endpoint}visualize_text/"
+   url = "#{settings.personality_insights_endpoint}visualize_text/"
    body = { :text => data["text"] }
    headers = {
       "Content-Type" => "application/json"
@@ -64,10 +64,10 @@ end
 #   {
 #      "handle" : "user_handle"
 #   }
-post '/um/model_twitter/' do
+post '/pi/model_twitter/' do
    data = JSON.load(request.body)
 
-   url = "#{settings.um_endpoint}model_tweets/for/#{data["handle"]}"
+   url = "#{settings.personality_insights_endpoint}model_tweets/for/#{data["handle"]}"
    response = Excon.get(url, :headers => headers)
 
    response.body
@@ -80,10 +80,10 @@ end
 #   {
 #      "handle" : "user_handle"
 #   }
-post '/um/visualize_twitter/' do
+post '/pi/visualize_twitter/' do
    data = JSON.load(request.body)
 
-   url = "#{settings.um_endpoint}visualize_tweets/for/#{data["handle"]}"
+   url = "#{settings.personality_insights_endpoint}visualize_tweets/for/#{data["handle"]}"
    response = Excon.get(url, :headers => headers)
 
    response.body

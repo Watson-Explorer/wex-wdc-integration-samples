@@ -1,0 +1,28 @@
+<html>
+
+<head>
+  <title>Ruby Sinatra Starter Application</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <h1>Welcome to Bluemix!</h1>
+  <h2>This application is powered by Ruby(version <%= @version %>) Sinatra on <%= @os %> platform.</h2>
+  <table border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <th class="env-var">Name</th>
+      <th>Value</th>
+    </tr>
+
+    <% @env.each do |key, value| %>
+    <%  if key == 'VCAP_SERVICES' then value = '**hidden**' end %>
+        <tr>
+          <td class="env-var"><%= key %></td>
+          <td><pre> <%= (value.is_a? Hash)? JSON.pretty_generate(value): value %> </td>
+        </tr>
+    <% end %>
+  </table>
+
+</body>
+
+</html>

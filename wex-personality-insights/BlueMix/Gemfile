@@ -1,0 +1,17 @@
+source 'https://rubygems.org'
+ruby "1.9.3"
+gem 'sinatra', '>= 0'
+gem 'excon'
+gem 'twitter'
+
+
+# To allow for easier Windows development
+# while still using Unicorn server when 
+# deploying to BlueMix
+platforms :ruby do # linux
+  gem 'unicorn'
+end
+
+platforms :mswin do
+  # gems specific to windows
+end

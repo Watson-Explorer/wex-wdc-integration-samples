@@ -1,0 +1,10 @@
+applications:
+- services:
+  - wex-personality-insights
+  disk_quota: 1024M
+  name: wex-personality-insights-integration
+  host: wex-pi
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 128M

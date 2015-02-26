@@ -37,7 +37,7 @@ A web page for testing the proxy and demonstrating the basics for how it works i
 
 The proxy provides helper functions that can easily be called from within an App Builder widget or through an Ajax request in JavaScript running in the browser.  Generally speaking, it is better to use the proxy from within App Builder widgets than to call out directly to a BlueMix (or other) external service.
 
-Here is an example for how to call the proxy from a Custom (ERB) widget in App Builder.  This example code calls the User Modeling proxy from an ERB widget.
+Here is an example for how to call the proxy from a Custom (ERB) widget in App Builder.  This example code calls the Personality Insights proxy from an ERB widget.
 
 
 ```HTML+ERB
@@ -53,7 +53,7 @@ endpoint_builder = {
   :host => origin.host,
   :port => origin.port,
   :scheme => origin.scheme,
-  :path => '/proxy/um/model_text/'  
+  :path => '/proxy/pi/model_text/'  
 }
 
 url = URI::HTTP.build(endpoint_builder)
@@ -77,13 +77,13 @@ model = JSON.parse(response.body)
 ```
 
 
-This snippet shows how you can call the same user modeling proxy from a browser-side Ajax call using jQuery (included by default in App Builder).  Be sure to to bind events to elements that exist in the DOM by using the standard jQuery binding methods (e.g. set your event bindings when the onLoad event is called or using delegates, etc.).
+This snippet shows how you can call the same personality insights proxy from a browser-side Ajax call using jQuery (included by default in App Builder).  Be sure to to bind events to elements that exist in the DOM by using the standard jQuery binding methods (e.g. set your event bindings when the onLoad event is called or using delegates, etc.).
 
 
 ```JavaScript
 $.ajax({
    type: "POST",  // all methods use POST
-   url: "/proxy/um/model_text/",
+   url: "/proxy/pi/model_text/",
    data: JSON.stringify(the_json_data_for_this_method),  // all methods take a JSON object in the body of the request
    success: function(response) {
       response = JSON.parse(response);
@@ -112,23 +112,23 @@ Request Body:
 }
 ```
 
-### User Modeling
+### Personality Insights
 
-Returns a JSON object containing psychographic analysis.  See [User Modeling Proxy Service](wex-um/watson-user-modeling-readme.md) for more information.
+Returns a JSON object containing psychographic analysis.  See [Personality Insights Proxy Service](wex-personality-insights/watson-personality-insights-readme.md) for more information.
 
 #### Model Text
 
-Endpoint: `proxy/um/model_text/`
+Endpoint: `proxy/pi/model_text/`
 
 ```json
 {
-  "text" : "The text from which the user model should be created."
+  "text" : "The text from which the model should be created."
 }
 ```
 
 #### Twitter using a Twitter Handle
 
-Endpoint: `proxy/um/model_twitter/`
+Endpoint: `proxy/pi/model_twitter/`
 
 ```json
 {

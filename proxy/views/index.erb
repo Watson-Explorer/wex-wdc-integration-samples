@@ -18,10 +18,8 @@
     <label for="api">API Function</label><br />
     <select class="api">
       <option value="qa">Watson QA</option>
-      <option value="um">Watson User Modeling</option>
-      <option value="um_twitter">Watson User Modeling for Twitter</option>
-      <option value="um_viz_text">Watson User Modeling Visualization</option>
-      <option value="um_viz_twitter">Watson User Modeling Visualiation for Twitter</option>
+      <option value="pi">Watson Personality Insights</option>
+      <option value="pi_twitter">Watson Personality Insights for Twitter</option>
       <option value="en_to_sp">Watson Machine Translation (English to Spanish)</option>
       <option value="sp_to_en">Watson Machine Translation (Spanish to English)</option>
       <option value="resonate">Watson Message Resonance</option>
@@ -56,10 +54,8 @@
         var api = $('.api').val();
         var endpoints = {
           "qa" : "qa/ask/",
-          "um" : "um/model_text/",
-          "um_twitter" : "um/model_twitter/",
-          "um_viz_text" : "um/visualize_text/",
-          "um_viz_twitter" : "um/visualize_twitter/",
+          "pi" : "pi/model_text/",
+          "pi_twitter" : "pi/model_twitter/",
           "en_to_sp" : "english/to/spanish/",
           "sp_to_en" : "spanish/to/english/",
           "resonate" : "resonate/message/",
@@ -92,10 +88,8 @@
       function changeExample() {
          var examples = {
           "qa" : { "question" : "How do I install lotus notes?" },
-          "um" : { "text" : "The text from which the user model should be created" },
-          "um_twitter" : { "handle" : "IBMWatson" },
-          "um_viz_text" : { "text" : "The text from which the user model should be created" },
-          "um_viz_twitter" : { "handle" : "IBMWatson" },
+          "pi" : { "text" : "The text from which the model should be created" },
+          "pi_twitter" : { "handle" : "IBMWatson" },
           "en_to_sp" : { "text" : "the text to be translated" },
           "sp_to_en" : { "text" : "el texto para ser traducido" },
           "resonate" : { "text" : "the message text to be analyzed" },

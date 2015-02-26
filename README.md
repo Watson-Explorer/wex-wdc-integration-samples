@@ -14,7 +14,7 @@ Before beginning the tutorials you should review the prerequisites provided belo
 2. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
 3. [Question and Answer Integration](wex-qa/watson-qa-readme.md)
 4. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
-5. [User Modeling Integration](wex-um/watson-user-modeling-readme.md)
+5. [Personality Insights Integration](wex-personality-insights/watson-personality-insights-readme.md)
 6. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
 
 # Architecture
@@ -68,7 +68,7 @@ The packages include the jars that are required in the dep-jar folder. These jar
 
 
 ## Ruby Sinatra Web-Based Applications
-Some examples like the **User Modeling Service** and the **Concept Expansion Service** are a Ruby Sinatra-based Bluemix application. The following steps get you setup and running for development of these applications. 
+Some examples like the **Personality Insights Service** and the **Concept Expansion Service** are a Ruby Sinatra-based Bluemix application. The following steps get you setup and running for development of these applications. 
 
 ### Required development tools
 - Ruby is required to compile the code. Download and install [Ruby 1.9.3](http://rubyinstaller.org/downloads/)
