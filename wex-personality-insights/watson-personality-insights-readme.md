@@ -123,7 +123,7 @@ At this point the widget should be fully configured.  To test the widget, naviga
 
 This simple example illustrates a basic integration. You should choose text that is relevant to a user or entity that you are modeling and you must provide enough text to generate a reliable model.  See the [Personality Insights documentation](http://www.ibm.com/smarterplanet/us/en/ibmwatson/developercloud/personality-insights.html) for more guidance on text selection and recommendations.
 
-![Screen shot of "Watson Personality Insights" widget.](ApplicationBuilder/watson-personality-insights-widget.png)
+![Screen shot of "Watson Personality Insights" widget.](ApplicationBuilder/presonality-insights-widget.png)
 
 __*The "Sent Text" Personality Insights widget*__
 
