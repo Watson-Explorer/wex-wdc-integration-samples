@@ -114,7 +114,7 @@ Request Body:
 
 ### Personality Insights
 
-Returns a JSON object containing psychographic analysis.  See [Personality Insights Proxy Service](wex-personality-insights/watson-personality-insights-readme.md) for more information.
+Returns a JSON object containing analysis.  See [Personality Insights Proxy Service](wex-personality-insights/watson-personality-insights-readme.md) for more information.
 
 #### Model Text
 
@@ -196,7 +196,7 @@ Once your changes are complete, restart Application Builder's WebSphere using th
 
 If new gems or other Java libraries are required, or if you want to package the proxy into a new WAR for any reason, you will need to set up a basic development environment for [JRuby](http://www.jruby.org/).  Ruby was chosen for the ease of implementation (using frameworks such as Sinatra) and to allow for modifications to be made in the proxy without requiring code to be recompiled.
 
-The proxy requires `JRuby 1.7.13` for deployment but it might be possible to test the application in native `Ruby 1.9.3`.  The simplest approach is to use JRuby for development, testing, and deployment.
+The proxy assumes `JRuby 1.7.18` for deployment but it might be possible to test the application in native `Ruby 1.9.3`.  The simplest approach is to use JRuby for development, testing, and deployment.
 
 The following JRuby Gems are required to get started.
 
@@ -222,9 +222,11 @@ $> rackup -p4567
 
 At this point the proxy will be running at http://localhost:4567.
 
-The WAR can be created using Warbler.  If adding new gems be sure that the gems are installed under JRuby and the `Gemfile` is fully up to date.  A rake task is available to Warble the proxy application.  The rake task should be used so that specific JARs required for proper operation in WebSphere are copied to the correct path locations within the generated WAR.  The rake task requires that `unzip` and either `jar` or `zip` are in your path.  On Linux and Mac OS these tools should be available by default.  On Windows it's simplest to run the rake task through [Git Bash](http://www.git-scm.com/), [MinGW](http://mingw.org/), or [Cygwin](https://cygwin.com/).
+The WAR can be created using Warbler.  If adding new gems be sure that the gems are installed under JRuby and the `Gemfile` is fully up to date.  A rake task is available to Warble the proxy application.  The rake task should be used so that specific JARs required for proper operation in WebSphere are copied to the correct path locations within the generated WAR.  The rake task requires that `unzip` and either `jar` or `zip` are in your path.  On Linux and Mac OS these tools should be available by default.  On Windows it's simplest to run the rake task through [Git Bash](http://www.git-scm.com/), [MinGW](http://mingw.org/), or [Cygwin](https://cygwin.com/).  Another alternative on Windows is to install the [GNU Zip](http://gnuwin32.sourceforge.net/packages/zip.htm) and [Unzip](http://gnuwin32.sourceforge.net/packages/unzip.htm) utilities and use the standard CMD prompt or Powershell.  It is assumed that the Java bin folder is on your path.
 
 
 ```
 $> rake -f warble.rake
 ```
+
+There could be minor variations in the JRuby file names from one version to another.  If you run into problems running the rake task you may need to update the script based on the version of JRuby you are running.  When we moved from 1.7.13 to 1.7.18 the file names were pretty obvious and the changes trivial.  Pull requests are welcome.
