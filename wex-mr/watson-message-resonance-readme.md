@@ -20,8 +20,6 @@ This tutorial will walk through the creation and deployment of two components.
 
 1. A basic Bluemix application exposing the Watson Message Resonance Service as a web service.
 2. A custom Application Builder widget that sends the query from an Application Builder search to the Bluemix application created in the previous step, which then relays the query text to the Watson Message Resonance Service.  The Watson Message Resonance Service processes the text and returns its analysis to the Bluemix application, which relays the analysis back to our Application Builder widget.  The widget then displays the analysis for each query term.
-<maybe 2 could use an illustration>
-
 
 ## Step-by-Step Tutorial
 
@@ -49,19 +47,16 @@ $> cf create-service message_resonance message_resonance_free_plan wex-mr-servic
 ```
 
 
-Build the application web service using Apache Ant. Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-mr.war`.
+Build the application web service using [Apache Maven](http://maven.apache.org/). Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-mr.war`.
 
 ```
-$> ant
+$> mvn install
 ```
-
-Note: the following Java libraries are required: `com.ibm.ws.javaee.jaxrs.1.1_1.0.1.jar`, `commons-codec-1.9.jar`, `httpclient-4.3.5.jar`, `httpcore-4.3.2.jar`, and `wink-json4j-1.4.jar`.
-
 
 Next, deploy the application to your space in the Bluemix cloud.  If this is the first time deploying, the application will be created for you.  Subsequent pushes to Bluemix will overwrite the previous instances you have deployed.
 
 ```
-$> cf push
+$> cf push -p target/wex-wdc-message-resonance-sample.war
 ```
 
 

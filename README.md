@@ -52,7 +52,7 @@ Some examples like the **Question and Answer Service** and the **Machine Transla
 
 ### Required development tools
 - A JDK is required to compile the Java code. Download and install [IBM JDK 1.7](http://www.ibm.com/developerworks/java/jdk/eclipse/index.html)  
-- We use Ant to build the package. Download and install [Apache Ant 1.9.4](http://ant.apache.org)
+- We use Maven to build the package. Download and install [Apache Maven](http://maven.apache.org/)
 
 ### Optional development tools
 The following tools and plug-ins can make testing and deployments easier. 
@@ -61,10 +61,7 @@ The following tools and plug-ins can make testing and deployments easier.
 - [IBM WebSphere Application Server Liberty Profile developer tools for Luna](http://marketplace.eclipse.org/content/ibm-websphere-application-server-liberty-profile-developer-tools-luna)
 
 ### Required Libraries
-The packages include the jars that are required in the dep-jar folder. These jars are derived from the following development libraries. 
-- [Apache Wink 1.4.0](http://incubator.apache.org/wink)
-- [Apache HTTP Core 4.3 ](http://hc.apache.org/)
-- [Java API for Restful services (Jax-RS 2.0)](https://jax-rs-spec.java.net/)
+- All requried Jars for Java examples will be included via Maven.
 
 
 ## Ruby Sinatra Web-Based Applications
@@ -82,8 +79,8 @@ Some examples like the **Personality Insights Service** and the **Concept Expans
 ## Watson Explorer
 
 In Watson Explorer, you should:
-- Build an Example Metadata collection in Watson Content Explorer, see the [Using Metadata for Searching, Sorting, and Filtering tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.engine.tut.md.doc/c_vse-metadata-tutorial.html?lang=en) for instructions. 
-- Learn how to create Application Builder search widgets, see the [Creating An Application tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_9.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html?lang=en) for more information.
+- Build an Example Metadata collection in Watson Content Explorer, see the [Using Metadata for Searching, Sorting, and Filtering tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_10.0.0/com.ibm.swg.im.infosphere.dataexpl.engine.tut.md.doc/c_vse-metadata-tutorial.html?lang=en) for instructions. 
+- Learn how to create Application Builder search widgets, see the [Creating An Application tutorial](http://www-01.ibm.com/support/knowledgecenter/SS8NLW_10.0.0/com.ibm.swg.im.infosphere.dataexpl.appbuilder.doc/c_de-ab-devapp-tutorial.html?lang=en) for more information.
 
 # Licensing
 All sample code contained within this project repository or any subdirectories is licensed according to the terms of the MIT license, which can be viewed in the file license.txt.
