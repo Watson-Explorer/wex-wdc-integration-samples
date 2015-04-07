@@ -6,7 +6,7 @@
 post '/qa/ask/' do
    data = JSON.load(request.body)
 
-   body = URI.encode_www_form(:question => data["question"])
+   body = URI.encode_www_form(:question => data["question"], :domain => "healthcare")
    headers = {
       "Content-Type" => "application/x-www-form-urlencoded"
    }

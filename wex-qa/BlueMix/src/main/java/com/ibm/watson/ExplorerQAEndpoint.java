@@ -38,7 +38,8 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response askWatson(@FormParam("question") String question) throws Exception {
+    public Response askWatson(@FormParam("question") String question,
+                              @FormParam("domain") String domain) throws Exception {
 
         String userid = null;
         String password = null;
@@ -47,7 +48,7 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
 
         // Find my service from VCAP_SERVICES in BlueMix
         String VCAP_SERVICES = System.getenv("VCAP_SERVICES");
-        String Service_Name = "Watson QAAPI-0.1";
+        String Service_Name = "question_and_answer";
 
         System.out.println("VCAP SERVICES is :" + VCAP_SERVICES);
 
@@ -61,7 +62,7 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
                 userid = vcapCredentials.getString("username");
                 password = vcapCredentials.getString("password");
                 restServerURL = vcapCredentials.getString("url");
-            } catch (NullPointerException | JSONException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
@@ -95,7 +96,7 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
                 build();
 
         // create the HTTP Post operation
-        HttpPost httpPost = new HttpPost(restServerURL);
+        HttpPost httpPost = new HttpPost(restServerURL + "/v1/question/" + domain);
 
         // create the HTTP Post Body information (How to build this comes from the documentation)
         StringEntity ent = new StringEntity(
@@ -132,7 +133,7 @@ public class ExplorerQAEndpoint extends javax.ws.rs.core.Application {
             // retrieve the credentials
             credentials = catalog.getJSONObject("credentials");
 
-        } catch (NullPointerException | JSONException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return credentials;

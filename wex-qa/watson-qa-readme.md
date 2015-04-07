@@ -57,17 +57,15 @@ cf login
 Once you are signed in, you will need to create the Watson Q&A service that the example application will be binding to.  In this example, we are calling the service `wex-qaapi` (this name is already set in the `manifest.yml`).  Since services might be used by multiple applications, this name isn't ideal, but it's perfectly suitable for this example.
 
 ```
-$> cf create-service "Watson QAAPI-0.1" Free wex-qaapi
+$> cf create-service question_and_answer question_and_answer_free_plan wex-qaapi
 ```
 
 
-Build the application web service using Apache Ant. Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-qa.war`.
+Build the application web service using [Apache Maven](http://maven.apache.org/). Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-wdc-qa-sample.war`.
 
 ```
-$> ant
+$> mvn install
 ```
-
-Note: the following JARs are dependencies: `com.ibm.ws.javaee.jaxrs.1.1_1.0.1.jar`, `commons-codec-1.6.jar`, `commons-logging-1.1.3.jar`, `fluent-hc-4.3.4.jar`, `httpclient-4.3.4.jar`, `httpcore-4.3.2.jar`, `httpmime-4.3.4.jar`, `jsr311-api-1.1.1.jar`, and `wink-json4j-1.4.jar`.
 
 Finally, deploy the application to your space in the Bluemix cloud.  If this is the first time deploying, the application will be created for you. Subsequent pushes to Bluemix will overwrite the previous instances you have deployed.
 

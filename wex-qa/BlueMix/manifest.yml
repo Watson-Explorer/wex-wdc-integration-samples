@@ -4,7 +4,7 @@ applications:
   disk_quota: 1024M
   host: wex-qa
   name: wex-qa
-  path: wex-qa.war
+  path: target/wex-wdc-qa-sample.war
   domain: mybluemix.net
   instances: 1
   memory: 512M
