@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ibm.watson</groupId>
-  <artifactId>wex-wdc-message-resonance-sample</artifactId>
+  <artifactId>wex-wdc-machine-translation-sample</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>wex-wdc-message-resonance-sample</name>
+  <name>wex-wdc-machine-translation-sample</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -36,6 +36,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>wex-wdc-message-resonance-sample</finalName>
+    <finalName>wex-wdc-machine-translation-sample</finalName>
   </build>
 </project>

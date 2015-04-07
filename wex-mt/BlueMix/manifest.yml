@@ -4,7 +4,7 @@ applications:
   disk_quota: 1024M
   host: wex-mt
   name: wex-mt
-  path: wex-mt.war
+  path: wex-wdc-machine-translation-sample.war
   domain: mybluemix.net
   instances: 1
   memory: 512M

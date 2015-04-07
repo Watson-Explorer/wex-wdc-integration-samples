@@ -1,10 +1,10 @@
 applications:
 - services:
-  - wex-mr-service
+  - wex-mr
   disk_quota: 1024M
-  host: wex-mr
+  host: wex-mr-msk
   name: wex-mr
-  path: wex-mr.war
+  path: wex-wdc-message-resonance-sample.war
   domain: mybluemix.net
   instances: 1
   memory: 512M

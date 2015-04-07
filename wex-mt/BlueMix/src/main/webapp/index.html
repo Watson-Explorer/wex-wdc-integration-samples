@@ -8,9 +8,17 @@
   <form id="form_translate" action="resources/translate" method="post">
   Machine Translation: <br/>
   specify language (sid): <br/>
-  <select name="sid" form="form_translate">
-    <option value="mt-enus-eses">English to Spanish</option>
-    <option value="mt-eses-enus">Spanish to English</option>
+  <select name="from" form="form_translate">
+    <option value="enus">English</option>
+    <option value="eses">Spanish</option>
+    <option value="frfr">French</option>
+    <option value="ptbr">Portuguese</option>
+  </select>
+  <select name="to" form="form_translate">
+    <option value="enus">English</option>
+    <option value="eses">Spanish</option>
+    <option value="frfr">French</option>
+    <option value="ptbr">Portuguese</option>
   </select>
   <br/><br/>
   Enter the text to Translate: <br/>
