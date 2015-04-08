@@ -50,9 +50,9 @@ public class RelationshipExtractor {
         try {
 	    //Get the service endpoint details
             JSONObject serviceInfo = new JSONObject(System.getenv("VCAP_SERVICES"));
-            JSONObject credentials = serviceInfo.getJSONArray("sire").getJSONObject(0).getJSONObject("credentials");
-            String restServerURL = credentials.getString("uri");
-            username = credentials.getString("userid");
+            JSONObject credentials = serviceInfo.getJSONArray("relationship_extraction").getJSONObject(0).getJSONObject("credentials");
+            String restServerURL = credentials.getString("url");
+            username = credentials.getString("username");
             passwd = credentials.getString("password");
 
 	    //Construct the payload that we will send to the service	    

@@ -48,17 +48,15 @@ cf login
 Once you are signed in, you will need to create the Watson Relationship Extraction service that the example application will be binding to.  In this example, we're calling the service `wex-re` (this name is already set in the `manifest.yml`).  Since services might be used by multiple applications, this name isn't ideal, but it's perfectly suitable for this example.
 
 ```
-$> cf create-service "sire" free wex-re
+$> cf create-service relationship_extraction relationship_extraction_free_plan wex-re
 ```
 
 
-Build the application web service using Apache Ant. Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-re.war`.
+Build the application web service using [Apache Maven](http://maven.apache.org/). Before performing this step, verify that you are in the Bluemix directory. This will generate a packaged Java WAR called `wex-wdc-relationship-extraction-sample.war`.
 
 ```
-$> ant
+$> mvn target
 ```
-
-Note: the following Java libraries are required: `com.ibm.ws.javaee.jaxrs.1.1_1.0.1.jar`, `commons-codec-1.9.jar`, and `wink-1.2.1-incubating.jar`
 
 
 Finally, deploy the application to your space in the Bluemix cloud.  If this is the first time deploying, the application will be created for you.  Subsequent pushes to Bluemix will overwrite the previous instances you have deployed.
