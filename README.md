@@ -61,7 +61,7 @@ The following tools and plug-ins can make testing and deployments easier.
 - [IBM WebSphere Application Server Liberty Profile developer tools for Luna](http://marketplace.eclipse.org/content/ibm-websphere-application-server-liberty-profile-developer-tools-luna)
 
 ### Required Libraries
-- All requried Jars for Java examples will be included via Maven.
+- All required Jars for Java examples will be included via Maven.
 
 
 ## Ruby Sinatra Web-Based Applications
