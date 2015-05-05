@@ -35,7 +35,7 @@ response = Net::HTTP.start(url.hostname, url.port) do |http|
   http.request(req)
 end
 
-answers = JSON.parse(response.body)
+answers = JSON.parse(response.body).first
 
 
 #-----------------------
@@ -85,7 +85,7 @@ answers["question"]["answers"].each do |answer|
     <div class="details"><a href="_blank" class="toggle_it">Show answer details</a></div>
     
     <div class="details details_text" style="display:none;">  
-      <%= render inline: answer["formattedText"].html_safe  # render the formattedText output from the QA service as html %>
+      <%= render inline: answer["formattedText"].html_safe %>
     </div>
     
     <div class="details" id="evidence-<%= id %>">
@@ -117,5 +117,4 @@ answers["question"]["answers"].each do |answer|
 }
 
 </style>
-
 

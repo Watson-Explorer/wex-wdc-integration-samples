@@ -1,17 +1,18 @@
-<%# JavaScript helper functions %>
 <script>
-  <%#Format the answers %>
-function displayModel(answers) {
-  var container = $(".qa_container").empty()
-  container.append("<h3>Results for the question <b>" + answers.question.questionText + "</b></h3>");
+  // format the answers for display
+
+  function displayModel(response) {
+    response = response[0]
+    var container = $(".qa_container").empty()
+    container.append("<h3>Results for the question <b>" + response.question.questionText + "</b></h3>");
   
-  <%#Iterate over the answer list, extracting the answer text, id and evidence %>
-  for (var a in answers.question.answers) {
-    var answer = answers.question.answers[a];
+  // Iterate over the answer list, extracting the answer text, id and evidence
+  for (var a in response.question.answers) {
+    var answer = response.question.answers[a];
     
     var title = answer.text;
     var id = answer.id;
-    var evidence = answers.question.evidencelist[id].text;
+    var evidence = response.question.evidencelist[id].text;
 
     
     var answerText = "<br /><div class='title'>" + (id + 1) + ". " + title + "</div>"
@@ -30,28 +31,26 @@ function displayModel(answers) {
   }
 }
   
-<%#Performs the asynchronous request to the proxy using JQuery %>
+// Performs the asynchronous request to the proxy using JQuery
 
 $(function() {
   $(".go").click(function() {
     
-    <%#Set the proxy endpoint, and get the question from the input box %>    
+    // Set the proxy endpoint, and get the question from the input box
     var endpoint = "/proxy/qa/ask/";
     var question = $("input[name='question']").val();
 
-    <%#Let the user know Watson is working on this... %>
+    // Let the user know Watson is working on this... 
     $(".qa_container").empty().append("Asking Watson...");
     
-    <%#convert the question into JSON, and submit it to the proxy.%>
+    // convert the question into JSON, and submit it to the proxy.
     $.ajax({
       type: "POST",
       url: endpoint,
       data: JSON.stringify({ "question" : question }),
       success: function(response) {
-        <%#Get the JSON response and parse it %>
         response = JSON.parse(response);
         console.log(response);
-        <%#format the answers %>
         displayModel(response);
       },
         failure: function(error) {
@@ -63,7 +62,7 @@ $(function() {
   });
 
 
-  <%#Display the answers to the user %>
+  // Display the answers to the user
   $("body").delegate(".toggle_it", "click", function() {
     $(this).parent().parent().find(".details_text").first().slideToggle();
     return false;
@@ -75,14 +74,14 @@ $(function() {
 </script>
 
 
-<%#HTML sections for question input and div to put the answers %>
+<!-- HTML sections for question input and div to put the answers -->
 <span>Ask Watson:</span> <input type="text" name="question" value="" />
 <input type="submit" value="Ask" class="go">
 <br />  
 <div class="qa_container"></div>
 
 
-<%# styling for the HTML output %>
+<!-- styling for the HTML output -->
 <style>
 .details
 {
