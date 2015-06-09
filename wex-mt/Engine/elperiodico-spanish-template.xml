@@ -2,14 +2,14 @@
   <prototype>
     <label>El Periodico News in Spanish</label>
     <description>
-      Use this template to create a source that will search the 
-      <a href="http://www.elperiodico.com/">El Periodico News in Spanish</a> website. 
+      Use this template to create a source that will search the
+      <a href="http://www.elperiodico.com/">El Periodico News in Spanish</a> website.
     </description>
     <declare>
       <label>Generate key from title</label>
-      <description name="description">
-        If false then generate a normal URL-based key for the documents.  
-        If true then generate a key based on normalizing the story's 
+      <description>
+        If false then generate a normal URL-based key for the documents.
+        If true then generate a key based on normalizing the story's
         title.
       </description>
       <attribute name="name">key-from-title</attribute>
@@ -18,8 +18,8 @@
     </declare>
     <declare>
       <label>Maximum article age</label>
-      <description name="description">
-        Filter articles that are more than this many days old.  
+      <description>
+        Filter articles that are more than this many days old.
         Specifying 0 or negative will keep all articles.
       </description>
       <attribute name="name">max-age</attribute>
