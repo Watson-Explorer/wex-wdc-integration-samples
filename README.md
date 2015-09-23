@@ -1,3 +1,10 @@
+Please note that all future sample code, including updates to these samples, will be maintained in the [IBM Watson repos on GitHub](https://github.com/ibm-watson).  This includes the following repositories of interest from this project:
+
+* [WEX Application Builder Samples](https://github.com/IBM-Watson/wex-appbuilder-samples)
+* [WEX Concept Insights Integration Samples](https://github.com/IBM-Watson/wex-wdc-Concept-Insights)
+* [Application Builder Sample Proxy](https://github.com/IBM-Watson/wex-appbuilder-sample-proxy)
+* [And many other interesting Watson Explorer samples, examples, and applications](https://github.com/ibm-watson?utf8=%E2%9C%93&query=wex)
+
 # Introduction to Integrating Watson Developer Cloud with Watson Explorer 
 
 [IBM Watson Explorer](http://www.ibm.com/smarterplanet/us/en/ibmwatson/explorer.html) combines search and content analytics with unique cognitive computing capabilities offered by the Watson Developer Cloud to help users find and understand the information they need to work more efficiently and make better, more confident decisions.  Watson Explorer Application Builder is the delivery tool that allows developers to quickly construct a 360-degree view combining data and analytics from many sources into a single view. These applications can be enhanced using content from external sources, external visualization libraries (such as D3.js), and external APIs. Integrating with the Watson Developer Cloud provides opportunities for further enhancing Watson Explorer applications to include cognitive-based features. Watson Developer Cloud applications can be integrated with Watson Explorer in a number of ways depending on the use cases and desired functionality.
