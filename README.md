@@ -17,12 +17,11 @@ Before beginning the tutorials you should review the prerequisites provided belo
 
 
 # Tutorial Listing
-1. [Message Resonance Integration](wex-mr/watson-message-resonance-readme.md)
-2. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
-3. [Question and Answer Integration](wex-qa/watson-qa-readme.md)
-4. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
-5. [Personality Insights Integration](wex-personality-insights/watson-personality-insights-readme.md)
-6. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
+1. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
+2. [Question and Answer Integration](wex-qa/watson-qa-readme.md)
+3. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
+4. [Personality Insights Integration](wex-personality-insights/watson-personality-insights-readme.md)
+5. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
 
 # Architecture
 The integration between Watson Developer Cloud (WDC) and Watson Explorer follows relatively straightforward web services patterns. All of the WDC services use a basic REST API. This makes it relatively easy to use WDC services from WDC applications. The example WDC applications here also use a simple REST API to facilitate communication between the WDC application and Watson Explorer.  Communication between a Watson Explorer application and a deployed WDC application is accomplished in two ways.
