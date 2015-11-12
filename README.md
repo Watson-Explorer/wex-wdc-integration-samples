@@ -18,9 +18,8 @@ Before beginning the tutorials you should review the prerequisites provided belo
 
 # Tutorial Listing
 1. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
-3. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
-4. [Personality Insights Integration](wex-personality-insights/watson-personality-insights-readme.md)
-5. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
+2. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
+3. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
 
 # Architecture
 The integration between Watson Developer Cloud (WDC) and Watson Explorer follows relatively straightforward web services patterns. All of the WDC services use a basic REST API. This makes it relatively easy to use WDC services from WDC applications. The example WDC applications here also use a simple REST API to facilitate communication between the WDC application and Watson Explorer.  Communication between a Watson Explorer application and a deployed WDC application is accomplished in two ways.
@@ -70,7 +69,7 @@ The following tools and plug-ins can make testing and deployments easier.
 
 
 ## Ruby Sinatra Web-Based Applications
-Some examples like the **Personality Insights Service** and the **Concept Expansion Service** are a Ruby Sinatra-based Bluemix application. The following steps get you setup and running for development of these applications. 
+Some examples like the **Concept Expansion Service** are a Ruby Sinatra-based Bluemix application. The following steps get you setup and running for development of these applications. 
 
 ### Required development tools
 - Ruby is required to compile the code. Download and install [Ruby 1.9.3](http://rubyinstaller.org/downloads/)
