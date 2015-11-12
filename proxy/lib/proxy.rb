@@ -1,22 +1,3 @@
-# Expected input:
-#   JSON object in the request body
-#   {
-#      "question" : "The question to ask of Watson Q&A"
-#   }
-post '/qa/ask/' do
-   data = JSON.load(request.body)
-
-   body = URI.encode_www_form(:question => data["question"], :domain => "healthcare")
-   headers = {
-      "Content-Type" => "application/x-www-form-urlencoded"
-   }
-
-   response = Excon.post(settings.qa_endpoint, :body => body, :headers => headers)
-
-   response.body
-end
-
-
 
 # Expected input:
 #   JSON object in the request body
@@ -142,26 +123,6 @@ post '/spanish/to/english/' do
    response.body
 end
 
-
-
-
-# Expected input:
-#   JSON object in the request body
-#   {
-#      "text" : "The message text to be analyzed for impact"
-#   }
-post '/resonate/message/' do
-   data = JSON.load(request.body)
-
-   body = { :question => data["text"] }
-   headers = {
-      "Content-Type" => "application/json"
-   }
-
-   response = Excon.post(settings.message_resonance_endpoint, :body => body.to_json, :headers => headers)
-
-   response.body
-end
 
 
 # Expected input:

@@ -17,7 +17,6 @@
 
     <label for="api">API Function</label><br />
     <select class="api">
-      <option value="qa">Watson QA</option>
       <option value="pi">Watson Personality Insights</option>
       <option value="pi_twitter">Watson Personality Insights for Twitter</option>
       <option value="en_to_sp">Watson Machine Translation (English to Spanish)</option>
@@ -53,12 +52,10 @@
 
         var api = $('.api').val();
         var endpoints = {
-          "qa" : "qa/ask/",
           "pi" : "pi/model_text/",
           "pi_twitter" : "pi/model_twitter/",
           "en_to_sp" : "english/to/spanish/",
           "sp_to_en" : "spanish/to/english/",
-          "resonate" : "resonate/message/",
           "re" : "re/",
           "pass" : "forward/"
         }
@@ -87,12 +84,10 @@
 
       function changeExample() {
          var examples = {
-          "qa" : { "question" : "How do I install lotus notes?" },
           "pi" : { "text" : "The text from which the model should be created" },
           "pi_twitter" : { "handle" : "IBMWatson" },
           "en_to_sp" : { "text" : "the text to be translated" },
           "sp_to_en" : { "text" : "el texto para ser traducido" },
-          "resonate" : { "text" : "the message text to be analyzed" },
           "re" : { "text" : "Eric works for IBM.  He was in Jamaica two weeks ago." }
         }
 

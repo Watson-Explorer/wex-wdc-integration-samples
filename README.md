@@ -1,7 +1,7 @@
-Please note that all future sample code, including updates to these samples, will be maintained in the [IBM Watson repos on GitHub](https://github.com/ibm-watson).  This includes the following repositories of interest from this project:
+**Please note** that all future sample code, including updates to these samples, will be maintained in the [IBM Watson repos on GitHub](https://github.com/ibm-watson).  This includes the following repositories of interest from this project:
 
 * [WEX Application Builder Samples](https://github.com/IBM-Watson/wex-appbuilder-samples)
-* [WEX Concept Insights Integration Samples](https://github.com/IBM-Watson/wex-wdc-Concept-Insights)
+* [WEX with Personality Insights Example](https://github.com/IBM-Watson/wex-appbuilder-samples/tree/master/personality_insights)
 * [Application Builder Sample Proxy](https://github.com/IBM-Watson/wex-appbuilder-sample-proxy)
 * [And many other interesting Watson Explorer samples, examples, and applications](https://github.com/ibm-watson?utf8=%E2%9C%93&query=wex)
 
@@ -18,7 +18,6 @@ Before beginning the tutorials you should review the prerequisites provided belo
 
 # Tutorial Listing
 1. [Machine Translation Integration](wex-mt/watson-machine-translation-readme.md)
-2. [Question and Answer Integration](wex-qa/watson-qa-readme.md)
 3. [Relationship Extraction Integration](wex-re/watson-re-readme.md)
 4. [Personality Insights Integration](wex-personality-insights/watson-personality-insights-readme.md)
 5. [Concept Expansion Integration](wex-ce/watson-concept-expansion-readme.md)
@@ -34,7 +33,7 @@ The sample proxy enables two important properties.  First, browsers enforce a sa
 There are five basic integration patterns for combining Watson Explorer and Watson Developer Cloud.  The specific integration pattern used will depend on the use cases and desired functionality.
 
 1. **Application Builder Widget**. The most common place to use a cognitive service is from within an Application Builder widget.  Most examples here demonstrate this.
-2. **In the client browser**.  Once a page is rendered in a user's browser there may be use cases in which you would want to allow a user to interact with a WDC application without refreshing the page. For example, a user might dialog with Watson Q&A from an entity page.  At this time the included proxy must be used to satisfy the end-user's browser same-origin policy.
+2. **In the client browser**.  Once a page is rendered in a user's browser there may be use cases in which you would want to allow a user to interact with a WDC application without refreshing the page. For example, a user might dialog with a Watson service from an entity page.  At this time the included proxy must be used to satisfy the end-user's browser same-origin policy.
 3. **At crawl time**.  The [Relationship Extraction Integration](wex-re/watson-re-readme.md) provides an example of an Engine converter that indexes the data returned from the Relationship Extraction service.
 4. **At query time**.  It is also possible to access WDC applications at query time from Engine.
 5. **Pre- or post-process**. In some cases it is useful to use a WDC application as a pre- or post-processing step and the output of this is used by the Watson Explorer application in some way.
@@ -54,7 +53,7 @@ Steps for Bluemix setup:
 2. Install the [Cloud Foundry command line tool](https://github.com/cloudfoundry/cli/releases), [installation instructions](http://docs.cloudfoundry.org/devguide/installcf/install-go-cli.html)
 
 ## Java Web-Based Applications
-Some examples like the **Question and Answer Service** and the **Machine Translation Service** are a Java-based Bluemix applications. The following steps get you setup and running for development of these applications. 
+Some examples like the **Machine Translation Service** are a Java-based Bluemix applications. The following steps get you setup and running for development of these applications. 
 
 ### Required development tools
 - A JDK is required to compile the Java code. Download and install [IBM JDK 1.7](http://www.ibm.com/developerworks/java/jdk/eclipse/index.html)  

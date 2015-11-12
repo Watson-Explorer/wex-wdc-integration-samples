@@ -1,3 +1,5 @@
+**Please Note**: This proxy is no longer maintained and will eventually be removed.  Please see the official [WEX Sample Proxy project](https://github.com/IBM-Watson/wex-appbuilder-sample-proxy).
+
 # Application Builder Proxy
 
 The Application Builder Proxy is a thin server side component that serves two important purposes.
@@ -99,18 +101,6 @@ $.ajax({
 
 All proxy methods accept a JSON object in the body of the request.  The examples above show the proper way to create and use JSON in this context.  Remember that the proxy is just a lightweight pass through and that all major processing will be taking place in the Watson Developer Cloud applications and services.
 
-### Watson Q&A
-
-Returns answers and evidence for a given question.  See [Watson QAAPI Proxy Service](wex-qa/watson-qa-readme.md) for more information.
-
-Endpoint: `proxy/qa/ask/`
-
-Request Body:
-```json
-{
-  "question" : "The question to ask of Watson Q&A"
-}
-```
 
 ### Personality Insights
 
@@ -159,17 +149,6 @@ Endpoint: `proxy/spanish/to/english/`
 }
 ```
 
-
-### Message Resonance
-Returns resonance scores for given text.  See [Message Resonance Proxy Service](wex-mr/watson-message-resonance-readme.md) for more information.
-
-Endpoint: `proxy/resonate/message/`
-
-```json
-{
-  "text" : "The message text to be analyzed for impact."
-}
-```
 
 ### Relationship Extraction
 Extracts generic entities (e.g. person, place, thing, organization, country, ...) and returns annotated text.  See [Relationship Extraction Proxy Service](wex-re/watson-re-readme.md) for more information.
@@ -229,4 +208,4 @@ The WAR can be created using Warbler.  If adding new gems be sure that the gems 
 $> rake -f warble.rake
 ```
 
-There could be minor variations in the JRuby file names from one version to another.  If you run into problems running the rake task you may need to update the script based on the version of JRuby you are running.  When we moved from 1.7.13 to 1.7.18 the file names were pretty obvious and the changes trivial.  Pull requests are welcome.
+There could be minor variations in the JRuby file names from one version to another.  If you run into problems running the rake task you may need to update the script based on the version of JRuby you are running.  When we moved from 1.7.13 to 1.7.18 the file names were pretty obvious and the changes trivial.
